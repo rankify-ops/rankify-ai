@@ -401,6 +401,7 @@ img{max-width:100%;display:block}
   .bridge-stats{flex-direction:row}
 }
 @media(max-width:768px){
+  .nav-cta{display:none}
   .sec{padding:64px 0}
   .hero{padding:120px 0 56px}
   .hero-stats{gap:12px}
