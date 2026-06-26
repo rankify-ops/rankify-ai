@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home 1 — Forest Temple Hero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .hero{background:none;overflow:hidden}
+  .hero::before{display:none}
+  .hero::after{display:none}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+  .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.88) 0%,rgba(255,255,255,.75) 40%,rgba(255,255,255,.5) 65%,rgba(0,0,0,.1) 100%)}
+  .hero .ctr{position:relative;z-index:1}
+  .hero-stats{position:relative;z-index:1}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a href="index.html" class="logo"><img src="images/rankify-logo.svg" alt="Rankify"></a>
+    <ul class="nav-l">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="shopify.html">Shopify</a></li>
+      <li><a href="partners.html">Partners</a></li>
+    </ul>
+    <div class="nav-r">
+      <a href="tel:0411375484" class="nav-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        0411 375 484
+      </a>
+      <a href="#quote-form" class="nav-cta">Get Free Quote</a>
+    </div>
+    <button class="mob-tog" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg">
+    <img src="images/hero-bg-2.jpg" alt="">
+  </div>
+  <div class="ctr">
+    <div class="hero-split">
+      <div class="hero-copy">
+        <span class="hero-trust">Custom web development · Gold Coast, built for all of Australia</span>
+        <h1>I build websites that turn visitors into leads and sales<span class="dot">.</span> That's all I do — and I'm very good at it<span class="dot">.</span></h1>
+        <p class="hero-sub">AI has made professional web development faster and the code cleaner, so I build you a custom, high-converting site in days — and you deal with me, the lead developer, the whole way. No agency markup, no account managers, no lock-in.</p>
+        <div class="hero-btns">
+          <a href="#quote-form" class="btn-p">Get Your Free Quote <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#portfolio" class="btn-s">See my work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+        </div>
+      </div>
+      <div class="hero-vid">
+        <div class="vid-placeholder vid-placeholder-hero">
+          <div class="vid-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hs-val">40+</span><span class="hs-label">Sites Built</span></div>
+      <div class="hero-stat"><span class="hs-val">4.9★</span><span class="hs-label">Google Rating</span></div>
+      <div class="hero-stat"><span class="hs-val">7 Days</span><span class="hs-label">Avg Delivery</span></div>
+      <div class="hero-stat"><span class="hs-val">Direct</span><span class="hs-label">Developer Access</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reframe">
+  <div class="ctr">
+    <div class="reframe-grid">
+      <div class="reframe-copy">
+        <span class="sec-tag">Why agencies cost what they do</span>
+        <h2 class="sec-t">You're not paying for the website<span class="dot">.</span> You're paying for the overhead<span class="dot">.</span></h2>
+        <p class="sec-sub" style="max-width:100%">When you hire a typical agency, here's where your money actually goes: an account manager who relays your messages, a project manager who schedules the meetings, a junior dev who writes the code, a senior who reviews it, and a sales rep who sold you in the first place. Layers of people, weeks of handoffs, and a retainer that never seems to end.</p>
+        <p style="font-size:1.1rem;font-weight:700;color:var(--g900);margin-top:20px">I cut all of that out.</p>
+        <p class="sec-sub" style="max-width:100%;margin-top:12px">With modern AI tooling, one experienced developer can now do what used to take a whole team — and do it faster, with cleaner code. So the cost collapses, and I pass the saving on to you instead of padding a margin.</p>
+      </div>
+      <div class="cmp-wrap">
+        <div class="cmp-table">
+          <div class="cmp-header">
+            <div class="cmp-label"></div>
+            <div class="cmp-col-h cmp-agency">Typical Agency</div>
+            <div class="cmp-col-h cmp-rankify">Rankify</div>
+          </div>
+          <div class="cmp-row">
+            <div class="cmp-label">Who you talk to</div>
+            <div class="cmp-col cmp-agency">Account manager</div>
+            <div class="cmp-col cmp-rankify">Me — the developer</div>
+          </div>
+          <div class="cmp-row">
+            <div class="cmp-label">Timeline</div>
+            <div class="cmp-col cmp-agency">6–8 weeks</div>
+            <div class="cmp-col cmp-rankify">Days, not weeks</div>
+          </div>
+          <div class="cmp-row">
+            <div class="cmp-label">Ongoing cost</div>
+            <div class="cmp-col cmp-agency">Locked-in retainer</div>
+            <div class="cmp-col cmp-rankify">You own it, no lock-in</div>
+          </div>
+          <div class="cmp-row">
+            <div class="cmp-label">Where your money goes</div>
+            <div class="cmp-col cmp-agency">Layers of overhead</div>
+            <div class="cmp-col cmp-rankify">The actual build</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
