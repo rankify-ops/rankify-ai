@@ -75,7 +75,8 @@ img{max-width:100%;display:block}
 
 /* ================ HERO ================ */
 .hero{padding:160px 0 80px;position:relative}
-.hero-inner{display:flex;flex-direction:column;gap:8px}
+.hero-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero-copy{display:flex;flex-direction:column;gap:8px}
 .hero-trust{display:inline-flex;align-items:center;gap:10px;font-size:.82rem;font-weight:600;color:var(--g500);margin-bottom:16px}
 .hero-trust::before{content:'';width:32px;height:2px;background:var(--brand);display:inline-block;flex-shrink:0}
 .hero h1{font-size:clamp(2.8rem,5.5vw,4rem);line-height:1.06;margin-bottom:18px;font-weight:800;max-width:700px}
@@ -280,8 +281,8 @@ img{max-width:100%;display:block}
 .ben-card p{font-size:.86rem;color:var(--g500);line-height:1.6}
 
 /* ================ HERO VIDEO ================ */
-.hero-vid{margin:40px 0 8px}
-.vid-placeholder-hero{aspect-ratio:16/9;max-width:720px}
+.hero-vid{margin:0}
+.vid-placeholder-hero{aspect-ratio:9/16;max-width:100%;border-radius:var(--r)}
 
 /* ================ AGENCY REFRAME — COMPARISON TABLE ================ */
 .reframe-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
@@ -367,6 +368,8 @@ img{max-width:100%;display:block}
   .shop-grid{grid-template-columns:1fr 1fr}
   .part-types{grid-template-columns:1fr}
   .ben-grid{grid-template-columns:1fr 1fr}
+  .hero-split{grid-template-columns:1fr}
+  .vid-placeholder-hero{aspect-ratio:16/9}
   .reframe-grid{grid-template-columns:1fr}
   .cmp-wrap{position:static}
   .dev-grid{grid-template-columns:1fr}
