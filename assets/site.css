@@ -234,7 +234,7 @@ img{max-width:100%;display:block}
 .footer .ctr{max-width:var(--ctr-max)}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:clamp(32px,4vw,80px);padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1);max-width:1400px;margin:0 auto}
 .footer-brand{display:flex;flex-direction:column;gap:14px}
-.footer-brand img{height:28px;width:auto}
+.footer-brand img{height:28px;width:auto;filter:brightness(0) invert(1)}
 .footer-brand p{font-size:.88rem;line-height:1.7;max-width:340px}
 .footer h5{color:#fff;font-size:.82rem;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
