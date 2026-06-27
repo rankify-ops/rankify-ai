@@ -380,7 +380,7 @@ img{max-width:100%;display:block}
 .cmp-row{border-bottom:1px solid rgba(0,0,0,.04)}
 .cmp-row:last-child{border-bottom:none}
 .cmp-row .cmp-label{padding:16px 20px;font-size:.88rem;font-weight:700;color:var(--g700)}
-.cmp-row .cmp-col{padding:16px 20px;font-size:.88rem;text-align:center;color:var(--g500)}
+.cmp-row .cmp-col{padding:16px 20px;font-size:.88rem;text-align:center;color:var(--g500);display:flex;flex-direction:column;align-items:center;gap:8px}
 .cmp-row .cmp-col.cmp-agency{color:var(--g400)}
 .cmp-row .cmp-col.cmp-rankify{color:var(--brand);font-weight:600;background:rgba(7,168,137,.04)}
 .cmp-row{transition:background .2s}
