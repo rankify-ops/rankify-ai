@@ -438,7 +438,7 @@ img{max-width:100%;display:block}
 .lb-label{position:relative;z-index:1;color:rgba(255,255,255,.7);font-size:.82rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
 .lb-track{position:relative;z-index:1;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:0;width:70vw;max-width:340px;scrollbar-width:none}
 @media(min-width:769px){
-  .lb-track{overflow:hidden}
+  .lb-track{overflow:hidden;width:auto;max-width:none}
   .lb-slide{flex:0 0 auto}
   .lb-slide .gt-frame.gt-mobile{max-width:none;width:min(50vw, 800px)}
   .lb-dots{display:none}
