@@ -440,7 +440,7 @@ img{max-width:100%;display:block}
 @media(min-width:769px){
   .lb-track{overflow:hidden}
   .lb-slide{flex:0 0 auto}
-  .lb-slide .gt-frame.gt-mobile{max-width:none;width:min(38vw, 550px)}
+  .lb-slide .gt-frame.gt-mobile{max-width:none;width:min(50vw, 800px)}
   .lb-dots{display:none}
 }
 .lb-track::-webkit-scrollbar{display:none}
