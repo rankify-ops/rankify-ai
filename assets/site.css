@@ -437,7 +437,8 @@ img{max-width:100%;display:block}
 .lb-close:hover{background:rgba(255,255,255,.25)}
 .lb-label{position:relative;z-index:1;color:rgba(255,255,255,.7);font-size:.82rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
 .lb-track{position:relative;z-index:1;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:0;width:70vw;max-width:340px;scrollbar-width:none}
-@media(min-width:769px){.lb-track{max-width:420px;width:420px}}
+@media(min-width:769px){.lb-track{max-width:500px;width:500px}}
+@media(min-width:769px){.lb-slide .gt-frame.gt-mobile{max-width:420px}}
 .lb-track::-webkit-scrollbar{display:none}
 .lb-slide{flex:0 0 100%;scroll-snap-align:center;display:flex;align-items:center;justify-content:center;padding:0 8px}
 .lb-slide .gt-frame.gt-mobile{max-width:280px;width:100%;padding:10px 9px}
