@@ -153,9 +153,7 @@ img{max-width:100%;display:block}
 .gt-notch{width:80px;height:6px;background:#2a2a2a;border-radius:3px;margin:0 auto 8px}
 .gt-viewport{border-radius:18px;overflow:hidden;position:relative;height:420px}
 .gt-home-bar{width:100px;height:4px;background:rgba(255,255,255,.2);border-radius:2px;margin:8px auto 0}
-.gt-scroll-img{width:100%;height:300%;position:absolute;top:0;left:0;transition:transform 0s;background-size:cover;background-position:top center}
-.gallery-tile:hover .gt-scroll-img,.gallery-tile.active .gt-scroll-img{animation:gt-scroll 6s ease-in-out forwards}
-@keyframes gt-scroll{0%{transform:translateY(0)}100%{transform:translateY(-66.67%)}}
+.gt-scroll-img{width:100%;height:100%;position:absolute;top:0;left:0;background-size:cover;background-position:top center}
 
 /* Browser frame */
 .gt-frame.gt-desktop{background:#1a1a1a;border-radius:14px;padding:0;box-shadow:0 8px 32px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.08);overflow:hidden}
