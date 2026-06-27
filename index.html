@@ -132,7 +132,8 @@
     <div class="sec-c">
       <span class="sec-tag">The work</span>
       <h2 class="sec-t">Real sites<span class="dot">.</span> Real results<span class="dot">.</span></h2>
-      <p class="sec-sub">A few of the sites I've built across different industries — every one designed to turn visitors into customers. Tap any to see how it performed.</p>
+      <p class="sec-sub">A few of the sites I've built across different industries — every one designed to turn visitors into customers.</p>
+      <p class="gallery-hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5"/></svg> Tap any phone to see results &amp; more pages from that client</p>
     </div>
 
     <!-- Controls -->
@@ -339,32 +340,33 @@
         <a href="#quote-form" class="btn-p dd-cta" onclick="document.getElementById('ddModal').classList.remove('open')">Want this for your brand? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
       </div>
     </div>
+    <p class="dd-tap-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5"/></svg> Tap a phone to enlarge &amp; swipe through</p>
     <div class="dd-carousel-wrap">
       <div class="dd-carousel" id="ddCarousel">
-        <div class="dd-phone" data-label="Home">
+        <div class="dd-phone" data-label="Home" data-img="images/hiatus-home.webp">
           <div class="gt-frame gt-mobile"><div class="gt-viewport"><div class="gt-scroll-img" style="background:url('images/hiatus-home.webp') top center/cover"></div></div><div class="gt-home-bar"></div></div>
         </div>
-        <div class="dd-phone" data-label="Best Sellers">
-          <div class="gt-frame gt-mobile"><div class="gt-viewport"><div class="gt-scroll-img" style="background:url('images/hiatus-scroll.webp') top center/cover"></div></div><div class="gt-home-bar"></div></div>
-        </div>
-        <div class="dd-phone" data-label="Rings">
+        <div class="dd-phone" data-label="Rings" data-img="images/hiatus-rings.webp">
           <div class="gt-frame gt-mobile"><div class="gt-viewport"><div class="gt-scroll-img" style="background:url('images/hiatus-rings.webp') top center/cover"></div></div><div class="gt-home-bar"></div></div>
         </div>
-        <div class="dd-phone" data-label="Bracelets">
+        <div class="dd-phone" data-label="Bracelets" data-img="images/hiatus-bracelets.webp">
           <div class="gt-frame gt-mobile"><div class="gt-viewport"><div class="gt-scroll-img" style="background:url('images/hiatus-bracelets.webp') top center/cover"></div></div><div class="gt-home-bar"></div></div>
         </div>
-        <div class="dd-phone" data-label="Product Page">
-          <div class="gt-frame gt-mobile"><div class="gt-viewport"><div class="gt-scroll-img" style="background:url('images/hiatus-product.webp') top center/cover"></div></div><div class="gt-home-bar"></div></div>
-        </div>
-        <div class="dd-phone" data-label="Necklaces">
+        <div class="dd-phone" data-label="Necklaces" data-img="images/hiatus-necklaces.webp">
           <div class="gt-frame gt-mobile"><div class="gt-viewport"><div class="gt-scroll-img" style="background:url('images/hiatus-necklaces.webp') top center/cover"></div></div><div class="gt-home-bar"></div></div>
-        </div>
-        <div class="dd-phone" data-label="About Us">
-          <div class="gt-frame gt-mobile"><div class="gt-viewport"><div class="gt-scroll-img" style="background:url('images/hiatus-about.webp') top center/cover"></div></div><div class="gt-home-bar"></div></div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<!-- PHONE LIGHTBOX -->
+<div class="lb-modal" id="lbModal">
+  <div class="lb-backdrop"></div>
+  <button class="lb-close">&times;</button>
+  <div class="lb-label" id="lbLabel"></div>
+  <div class="lb-track" id="lbTrack"></div>
+  <div class="lb-dots" id="lbDots"></div>
 </div>
 
 <!-- SECTION 4 — WORK DIRECTLY WITH ME -->
