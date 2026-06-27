@@ -199,23 +199,27 @@
     track.innerHTML = tiles + tiles;
   }
 
-  // Mobile tap-to-scroll (one at a time)
+  // Gallery click handler (event delegation on track for duplicated tiles)
   var activeTile = null;
-  document.querySelectorAll('.gallery-tile').forEach(function(tile){
-    tile.addEventListener('click', function(ev){
-      if(window.innerWidth > 768) return;
-      if(activeTile && activeTile !== tile){
-        activeTile.classList.remove('active');
-      }
-      if(tile.classList.contains('active')){
-        openCaseStudy(parseInt(tile.dataset.site));
+  if(track){
+    track.addEventListener('click', function(ev){
+      var tile = ev.target.closest('.gallery-tile');
+      if(!tile) return;
+      var idx = parseInt(tile.dataset.site);
+      if(window.innerWidth <= 768){
+        if(activeTile && activeTile !== tile) activeTile.classList.remove('active');
+        if(tile.classList.contains('active')){
+          if(idx === 0) openDeepDive(idx); else openCaseStudy(idx);
+        } else {
+          tile.classList.add('active');
+          activeTile = tile;
+          ev.stopPropagation();
+        }
       } else {
-        tile.classList.add('active');
-        activeTile = tile;
-        ev.stopPropagation();
+        if(idx === 0) openDeepDive(idx); else openCaseStudy(idx);
       }
     });
-  });
+  }
 
   // Case study modal
   var modal = document.getElementById('csModal');
@@ -253,11 +257,29 @@
     document.body.style.overflow = '';
   }
 
-  // Desktop click opens case study
-  document.querySelectorAll('.gallery-tile').forEach(function(tile){
-    tile.addEventListener('click', function(){
-      if(window.innerWidth <= 768) return;
-      openCaseStudy(parseInt(tile.dataset.site));
+  // Deep dive modal (Hiatus)
+  var ddModal = document.getElementById('ddModal');
+  function openDeepDive(idx){
+    var cs = caseStudies[idx];
+    if(!cs || !ddModal) return;
+    document.getElementById('ddMetric').textContent = cs.metric;
+    document.getElementById('ddSiteName').textContent = cs.name;
+    document.getElementById('ddIndustry').textContent = cs.industry;
+    document.getElementById('ddResult').textContent = cs.result;
+    ddModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDdModal(){
+    if(!ddModal) return;
+    ddModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  if(ddModal){
+    ddModal.querySelector('.dd-backdrop').addEventListener('click', closeDdModal);
+    ddModal.querySelector('.dd-close').addEventListener('click', closeDdModal);
+    document.addEventListener('keydown', function(ev){
+      if(ev.key === 'Escape' && ddModal.classList.contains('open')) closeDdModal();
     });
-  });
+  }
+
 })();
