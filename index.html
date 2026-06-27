@@ -127,61 +127,243 @@
   </div>
 </section>
 
-<!-- SECTION 3 — PROOF OF WORK -->
+<!-- SECTION 3 — PROOF GALLERY -->
 <section class="sec sec-grey fade" id="portfolio">
   <div class="ctr">
     <div class="sec-c">
-      <span class="sec-tag">Look at the work</span>
-      <h2 class="sec-t">Sites I've built. Real results.</h2>
+      <span class="sec-tag">The work</span>
+      <h2 class="sec-t">Real sites<span class="dot">.</span> Real results<span class="dot">.</span></h2>
+      <p class="sec-sub">A few of the sites I've built across different industries — every one designed to turn visitors into customers. Tap any to see how it performed.</p>
     </div>
-    <div class="port-list">
-      <div class="port-item fade">
-        <div class="port-left">
-          <span class="port-num">01</span>
-          <div><div class="port-name">Geelong Heat Pumps</div><div class="port-ind">Hot Water · Trade Site</div></div>
-        </div>
-        <div class="port-right">
-          <span class="port-result">+340% enquiries</span>
-          <span class="port-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-        </div>
+
+    <!-- Controls -->
+    <div class="gallery-controls fade">
+      <div class="gallery-device-toggle">
+        <button class="gdt-btn active" data-device="mobile">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          Mobile
+        </button>
+        <button class="gdt-btn" data-device="desktop">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Desktop
+        </button>
       </div>
-      <div class="port-item fade">
-        <div class="port-left">
-          <span class="port-num">02</span>
-          <div><div class="port-name">Prime Group Build</div><div class="port-ind">Construction</div></div>
-        </div>
-        <div class="port-right">
-          <span class="port-result">+280% traffic</span>
-          <span class="port-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-        </div>
-      </div>
-      <div class="port-item fade">
-        <div class="port-left">
-          <span class="port-num">03</span>
-          <div><div class="port-name">Tinktek</div><div class="port-ind">Electrical</div></div>
-        </div>
-        <div class="port-right">
-          <span class="port-result">Page 1 Google</span>
-          <span class="port-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-        </div>
-      </div>
-      <div class="port-item fade">
-        <div class="port-left">
-          <span class="port-num">04</span>
-          <div><div class="port-name">EvoSolar</div><div class="port-ind">Solar</div></div>
-        </div>
-        <div class="port-right">
-          <span class="port-result">+200% leads</span>
-          <span class="port-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-        </div>
+      <div class="gallery-filters">
+        <button class="gf-btn active" data-filter="all">All</button>
+        <button class="gf-btn" data-filter="ecommerce">eCommerce</button>
+        <button class="gf-btn" data-filter="trades">Trades</button>
+        <button class="gf-btn" data-filter="professional">Professional</button>
+        <button class="gf-btn" data-filter="tech">Tech</button>
       </div>
     </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-tile fade" data-industry="ecommerce" data-site="0">
+        <div class="gt-frame gt-mobile">
+          <div class="gt-notch"></div>
+          <div class="gt-viewport">
+            <div class="gt-scroll-img" style="background:linear-gradient(180deg,#1a1a2e 0%,#16213e 15%,#0f3460 30%,#533483 50%,#e94560 70%,#1a1a2e 100%)"></div>
+          </div>
+          <div class="gt-home-bar"></div>
+        </div>
+        <div class="gt-frame gt-desktop" style="display:none">
+          <div class="gt-browser-bar"><span></span><span></span><span></span></div>
+          <div class="gt-viewport">
+            <div class="gt-scroll-img" style="background:linear-gradient(180deg,#1a1a2e 0%,#16213e 15%,#0f3460 30%,#533483 50%,#e94560 70%,#1a1a2e 100%)"></div>
+          </div>
+        </div>
+        <div class="gt-info">
+          <div class="gt-name">Hiatus Hype</div>
+          <div class="gt-industry">Fashion · Shopify</div>
+          <div class="gt-metric">+120% conversion rate</div>
+        </div>
+      </div>
+
+      <div class="gallery-tile fade" data-industry="ecommerce" data-site="1">
+        <div class="gt-frame gt-mobile">
+          <div class="gt-notch"></div>
+          <div class="gt-viewport">
+            <div class="gt-scroll-img" style="background:linear-gradient(180deg,#fdf6e3 0%,#f5e6d3 15%,#d4a574 30%,#8b6914 50%,#2c1810 70%,#fdf6e3 100%)"></div>
+          </div>
+          <div class="gt-home-bar"></div>
+        </div>
+        <div class="gt-frame gt-desktop" style="display:none">
+          <div class="gt-browser-bar"><span></span><span></span><span></span></div>
+          <div class="gt-viewport">
+            <div class="gt-scroll-img" style="background:linear-gradient(180deg,#fdf6e3 0%,#f5e6d3 15%,#d4a574 30%,#8b6914 50%,#2c1810 70%,#fdf6e3 100%)"></div>
+          </div>
+        </div>
+        <div class="gt-info">
+          <div class="gt-name">Myoko Skincare</div>
+          <div class="gt-industry">Beauty · Shopify</div>
+          <div class="gt-metric">+85% AOV increase</div>
+        </div>
+      </div>
+
+      <div class="gallery-tile fade" data-industry="trades" data-site="2">
+        <div class="gt-frame gt-mobile">
+          <div class="gt-notch"></div>
+          <div class="gt-viewport">
+            <div class="gt-scroll-img" style="background:linear-gradient(180deg,#1b4332 0%,#2d6a4f 15%,#40916c 30%,#52b788 50%,#95d5b2 70%,#1b4332 100%)"></div>
+          </div>
+          <div class="gt-home-bar"></div>
+        </div>
+        <div class="gt-frame gt-desktop" style="display:none">
+          <div class="gt-browser-bar"><span></span><span></span><span></span></div>
+          <div class="gt-viewport">
+            <div class="gt-scroll-img" style="background:linear-gradient(180deg,#1b4332 0%,#2d6a4f 15%,#40916c 30%,#52b788 50%,#95d5b2 70%,#1b4332 100%)"></div>
+          </div>
+        </div>
+        <div class="gt-info">
+          <div class="gt-name">Geelong Heat Pumps</div>
+          <div class="gt-industry">Hot Water · Trades</div>
+          <div class="gt-metric">+340% enquiries</div>
+        </div>
+      </div>
+
+      <div class="gallery-tile fade" data-industry="trades" data-site="3">
+        <div class="gt-frame gt-mobile">
+          <div class="gt-notch"></div>
+          <div class="gt-viewport">
+            <div class="gt-scroll-img" style="background:linear-gradient(180deg,#212529 0%,#343a40 15%,#495057 30%,#f8961e 50%,#f9c74f 70%,#212529 100%)"></div>
+          </div>
+          <div class="gt-home-bar"></div>
+        </div>
+        <div class="gt-frame gt-desktop" style="display:none">
+          <div class="gt-browser-bar"><span></span><span></span><span></span></div>
+          <div class="gt-viewport">
+            <div class="gt-scroll-img" style="background:linear-gradient(180deg,#212529 0%,#343a40 15%,#495057 30%,#f8961e 50%,#f9c74f 70%,#212529 100%)"></div>
+          </div>
+        </div>
+        <div class="gt-info">
+          <div class="gt-name">Prime Group Build</div>
+          <div class="gt-industry">Construction</div>
+          <div class="gt-metric">+280% traffic</div>
+        </div>
+      </div>
+
+      <div class="gallery-tile fade" data-industry="trades" data-site="4">
+        <div class="gt-frame gt-mobile">
+          <div class="gt-notch"></div>
+          <div class="gt-viewport">
+            <div class="gt-scroll-img" style="background:linear-gradient(180deg,#003049 0%,#d62828 15%,#f77f00 30%,#fcbf49 50%,#eae2b7 70%,#003049 100%)"></div>
+          </div>
+          <div class="gt-home-bar"></div>
+        </div>
+        <div class="gt-frame gt-desktop" style="display:none">
+          <div class="gt-browser-bar"><span></span><span></span><span></span></div>
+          <div class="gt-viewport">
+            <div class="gt-scroll-img" style="background:linear-gradient(180deg,#003049 0%,#d62828 15%,#f77f00 30%,#fcbf49 50%,#eae2b7 70%,#003049 100%)"></div>
+          </div>
+        </div>
+        <div class="gt-info">
+          <div class="gt-name">EvoSolar</div>
+          <div class="gt-industry">Solar</div>
+          <div class="gt-metric">+200% leads</div>
+        </div>
+      </div>
+
+      <div class="gallery-tile fade" data-industry="trades" data-site="5">
+        <div class="gt-frame gt-mobile">
+          <div class="gt-notch"></div>
+          <div class="gt-viewport">
+            <div class="gt-scroll-img" style="background:linear-gradient(180deg,#2b2d42 0%,#8d99ae 15%,#edf2f4 30%,#ef233c 50%,#d90429 70%,#2b2d42 100%)"></div>
+          </div>
+          <div class="gt-home-bar"></div>
+        </div>
+        <div class="gt-frame gt-desktop" style="display:none">
+          <div class="gt-browser-bar"><span></span><span></span><span></span></div>
+          <div class="gt-viewport">
+            <div class="gt-scroll-img" style="background:linear-gradient(180deg,#2b2d42 0%,#8d99ae 15%,#edf2f4 30%,#ef233c 50%,#d90429 70%,#2b2d42 100%)"></div>
+          </div>
+        </div>
+        <div class="gt-info">
+          <div class="gt-name">Tinktek</div>
+          <div class="gt-industry">Electrical</div>
+          <div class="gt-metric">Page 1 Google</div>
+        </div>
+      </div>
+
+      <div class="gallery-tile fade" data-industry="professional" data-site="6">
+        <div class="gt-frame gt-mobile">
+          <div class="gt-notch"></div>
+          <div class="gt-viewport">
+            <div class="gt-scroll-img" style="background:linear-gradient(180deg,#f8f9fa 0%,#dee2e6 15%,#1d3557 30%,#457b9d 50%,#a8dadc 70%,#f8f9fa 100%)"></div>
+          </div>
+          <div class="gt-home-bar"></div>
+        </div>
+        <div class="gt-frame gt-desktop" style="display:none">
+          <div class="gt-browser-bar"><span></span><span></span><span></span></div>
+          <div class="gt-viewport">
+            <div class="gt-scroll-img" style="background:linear-gradient(180deg,#f8f9fa 0%,#dee2e6 15%,#1d3557 30%,#457b9d 50%,#a8dadc 70%,#f8f9fa 100%)"></div>
+          </div>
+        </div>
+        <div class="gt-info">
+          <div class="gt-name">Rankin &amp; Associates</div>
+          <div class="gt-industry">Accounting</div>
+          <div class="gt-metric">+150% enquiries</div>
+        </div>
+      </div>
+
+      <div class="gallery-tile fade" data-industry="ecommerce" data-site="7">
+        <div class="gt-frame gt-mobile">
+          <div class="gt-notch"></div>
+          <div class="gt-viewport">
+            <div class="gt-scroll-img" style="background:linear-gradient(180deg,#0d1b2a 0%,#1b263b 15%,#415a77 30%,#778da9 50%,#e0e1dd 70%,#0d1b2a 100%)"></div>
+          </div>
+          <div class="gt-home-bar"></div>
+        </div>
+        <div class="gt-frame gt-desktop" style="display:none">
+          <div class="gt-browser-bar"><span></span><span></span><span></span></div>
+          <div class="gt-viewport">
+            <div class="gt-scroll-img" style="background:linear-gradient(180deg,#0d1b2a 0%,#1b263b 15%,#415a77 30%,#778da9 50%,#e0e1dd 70%,#0d1b2a 100%)"></div>
+          </div>
+        </div>
+        <div class="gt-info">
+          <div class="gt-name">SH Roofing</div>
+          <div class="gt-industry">Roofing · Trades</div>
+          <div class="gt-metric">$100K → $2M revenue</div>
+        </div>
+      </div>
+    </div>
+
     <!-- Pull-quote band -->
     <div class="pullquote fade">
       <blockquote>"One trade business I built for went from under $100K to $2M in revenue. The website was the foundation that made it possible."</blockquote>
     </div>
   </div>
 </section>
+
+<!-- CASE STUDY MODAL -->
+<div class="cs-modal" id="csModal">
+  <div class="cs-backdrop"></div>
+  <div class="cs-content">
+    <button class="cs-close">&times;</button>
+    <div class="cs-metric-hero" id="csMetric"></div>
+    <div class="cs-site-name" id="csSiteName"></div>
+    <div class="cs-industry" id="csIndustry"></div>
+    <div class="cs-body">
+      <div class="cs-section">
+        <h4>The Problem</h4>
+        <p id="csProblem"></p>
+      </div>
+      <div class="cs-section">
+        <h4>The Result</h4>
+        <p id="csResult"></p>
+      </div>
+      <div class="cs-section">
+        <h4>What I Did</h4>
+        <ul id="csWhatIDid"></ul>
+      </div>
+      <div class="cs-quote-block">
+        <blockquote id="csQuote"></blockquote>
+        <cite id="csAuthor"></cite>
+      </div>
+    </div>
+    <a href="#quote-form" class="btn-p cs-cta" onclick="document.getElementById('csModal').classList.remove('open')">Want results like this? Get your free quote <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+  </div>
+</div>
 
 <!-- SECTION 4 — WORK DIRECTLY WITH ME -->
 <section class="sec fade" id="about">

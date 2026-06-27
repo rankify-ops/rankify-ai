@@ -181,4 +181,117 @@
       b.addEventListener('click', function(){ if(cs<=1) return; cs--; upd(); });
     });
   });
+  // ========== PROOF GALLERY ==========
+  var caseStudies = [
+    {name:'Hiatus Hype',industry:'Fashion · Shopify',metric:'+120% conversion rate',problem:'Outdated Shopify theme with poor mobile experience and low conversion rates. The brand aesthetic wasn\'t translating to the online store.',result:'+120% conversion rate within 60 days of launch, with a 45% increase in average order value.',whatIDid:['Rebuilt the entire Shopify theme from scratch with mobile-first conversion layout','Trust signals above the fold — reviews, shipping guarantee, secure checkout badges','Streamlined checkout flow reducing cart abandonment by 35%'],quote:'The new store completely changed our online business. Customers actually trust us now.',author:'Hiatus Hype'},
+    {name:'Myoko Skincare',industry:'Beauty · Shopify',metric:'+85% AOV increase',problem:'Generic template store that looked like every other skincare brand. Products weren\'t presented in a way that justified premium pricing.',result:'+85% average order value increase. Customers spending more per transaction thanks to better product presentation and upsell flows.',whatIDid:['Premium product photography layouts that justified the price point','Smart upsell and bundle sections that feel natural, not pushy','Mobile experience built around how people actually browse skincare'],quote:'Our AOV jumped almost immediately. The site finally matches the quality of our products.',author:'Myoko Skincare'},
+    {name:'Geelong Heat Pumps',industry:'Hot Water · Trades',metric:'+340% enquiries',problem:'Basic DIY website that wasn\'t ranking and wasn\'t converting the little traffic it had. No clear call-to-action, no trust signals.',result:'+340% enquiries in the first 90 days. Page 1 rankings for key local search terms.',whatIDid:['Conversion-focused layout — phone number and quote form visible without scrolling','Local SEO structure with service area pages and Google Business integration','Trust signals: real reviews, licensing info, response time guarantee'],quote:'Built our site in 5 days and we saw a massive jump in enquiries within the first week. Game changer.',author:'Mark C., Geelong Heat Pumps'},
+    {name:'Prime Group Build',industry:'Construction',metric:'+280% traffic',problem:'No online presence at all. Relying entirely on word of mouth which was drying up.',result:'+280% organic traffic within 6 months. Consistent enquiries from Google search for the first time.',whatIDid:['Project gallery showcasing completed builds with before/after','Service pages targeting specific construction types and locations','Mobile-first — most tradies\' customers search on their phone'],quote:'We went from a dodgy DIY site to something that looks legit. Customers trust us more and the phone hasn\'t stopped.',author:'Jake S., Prime Group Build'},
+    {name:'EvoSolar',industry:'Solar',metric:'+200% leads',problem:'Template website that looked like every other solar installer. No differentiation, no conversion strategy.',result:'+200% leads. The site now generates consistent qualified enquiries without paid ads.',whatIDid:['Calculator tool showing potential savings — interactive, personalised','Trust stack: accreditation badges, real install photos, verified reviews','Speed optimised for mobile — 98 PageSpeed score'],quote:'The quality is unreal. Our old site was embarrassing — this one actually generates work.',author:'Dan W., EvoSolar'},
+    {name:'Tinktek',industry:'Electrical',metric:'Page 1 Google',problem:'Invisible online. Not ranking for any local keywords despite being established for years.',result:'Page 1 Google rankings for primary service keywords. Consistent organic lead flow.',whatIDid:['Full local SEO build — service area pages, schema markup, Google Business','Content strategy targeting the exact searches their customers make','Fast, clean code that Google loves — perfect Core Web Vitals'],quote:'Ranks on page 1 for our main keywords and the leads are quality. Best money I\'ve spent on the business.',author:'Ryan L., Tinktek'},
+    {name:'Rankin & Associates',industry:'Accounting',metric:'+150% enquiries',problem:'Outdated, corporate-looking site that felt cold. Not generating any new client enquiries online.',result:'+150% enquiries. New clients regularly cite the website as why they chose the firm.',whatIDid:['Warm, approachable design that still feels professional','Clear service pages with outcomes, not jargon','Simple contact flow — no friction between landing and enquiring'],quote:'Finally a website that represents who we actually are. New clients mention it all the time.',author:'Rankin & Associates'},
+    {name:'SH Roofing',industry:'Roofing · Trades',metric:'$100K → $2M revenue',problem:'Small operation doing under $100K/year. No online presence, no way to scale beyond word of mouth.',result:'Scaled from under $100K to $2M annual revenue in 12 months. The website was the foundation.',whatIDid:['High-converting layout with emergency CTA and instant quote form','Before/after project gallery building trust instantly','Local SEO across multiple service areas for maximum reach'],quote:'Within 2 weeks of launching we had our best month ever. The website pays for itself ten times over.',author:'Sam H., SH Roofing'}
+  ];
+
+  // Device toggle
+  var deviceBtns = document.querySelectorAll('.gdt-btn');
+  deviceBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      deviceBtns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var device = btn.dataset.device;
+      document.querySelectorAll('.gallery-tile').forEach(function(tile){
+        var mob = tile.querySelector('.gt-mobile');
+        var desk = tile.querySelector('.gt-desktop');
+        if(device === 'mobile'){
+          mob.style.display = '';
+          desk.style.display = 'none';
+        } else {
+          mob.style.display = 'none';
+          desk.style.display = '';
+        }
+      });
+    });
+  });
+
+  // Industry filter
+  var filterBtns = document.querySelectorAll('.gf-btn');
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filterBtns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var f = btn.dataset.filter;
+      document.querySelectorAll('.gallery-tile').forEach(function(tile){
+        var ind = tile.dataset.industry;
+        if(f === 'all' || ind === f){
+          tile.classList.remove('hiding','hidden');
+        } else {
+          tile.classList.add('hiding');
+          setTimeout(function(){ tile.classList.add('hidden'); }, 300);
+        }
+      });
+    });
+  });
+
+  // Mobile tap-to-scroll (one at a time)
+  var activeTile = null;
+  document.querySelectorAll('.gallery-tile').forEach(function(tile){
+    tile.addEventListener('click', function(ev){
+      if(window.innerWidth > 768) return;
+      if(activeTile && activeTile !== tile){
+        activeTile.classList.remove('active');
+      }
+      if(tile.classList.contains('active')){
+        openCaseStudy(parseInt(tile.dataset.site));
+      } else {
+        tile.classList.add('active');
+        activeTile = tile;
+        ev.stopPropagation();
+      }
+    });
+  });
+
+  // Case study modal
+  var modal = document.getElementById('csModal');
+  function openCaseStudy(idx){
+    var cs = caseStudies[idx];
+    if(!cs || !modal) return;
+    document.getElementById('csMetric').textContent = cs.metric;
+    document.getElementById('csSiteName').textContent = cs.name;
+    document.getElementById('csIndustry').textContent = cs.industry;
+    document.getElementById('csProblem').textContent = cs.problem;
+    document.getElementById('csResult').textContent = cs.result;
+    var ul = document.getElementById('csWhatIDid');
+    ul.innerHTML = '';
+    cs.whatIDid.forEach(function(w){
+      var li = document.createElement('li');
+      li.textContent = w;
+      ul.appendChild(li);
+    });
+    document.getElementById('csQuote').textContent = '"' + cs.quote + '"';
+    document.getElementById('csAuthor').textContent = '— ' + cs.author;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  if(modal){
+    modal.querySelector('.cs-backdrop').addEventListener('click', closeCsModal);
+    modal.querySelector('.cs-close').addEventListener('click', closeCsModal);
+    document.addEventListener('keydown', function(ev){
+      if(ev.key === 'Escape' && modal.classList.contains('open')) closeCsModal();
+    });
+  }
+  function closeCsModal(){
+    if(!modal) return;
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Desktop click opens case study
+  document.querySelectorAll('.gallery-tile').forEach(function(tile){
+    tile.addEventListener('click', function(){
+      if(window.innerWidth <= 768) return;
+      openCaseStudy(parseInt(tile.dataset.site));
+    });
+  });
 })();
