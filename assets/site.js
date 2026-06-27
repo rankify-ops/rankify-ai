@@ -312,7 +312,8 @@
   }
 
   function goToSlide(idx){
-    if(idx < 0 || idx >= lbPhones.length) return;
+    if(idx < 0) idx = lbPhones.length - 1;
+    if(idx >= lbPhones.length) idx = 0;
     lbCurrent = idx;
     lbLabel.textContent = lbPhones[idx].label;
     lbDots.querySelectorAll('.lb-dot').forEach(function(d, i){ d.classList.toggle('active', i === idx); });
