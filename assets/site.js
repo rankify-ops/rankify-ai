@@ -289,30 +289,26 @@
     lbDots.innerHTML = '';
     lbPhones = [];
     var isMobile = window.innerWidth <= 768;
-    if(isMobile){
-      phones.forEach(function(p, i){
-        var slide = document.createElement('div');
-        slide.className = 'lb-slide';
-        slide.innerHTML = '<div class="gt-frame gt-mobile"><div class="gt-viewport"><div class="gt-scroll-img" style="background:url(\'' + p.dataset.img + '\') top center/cover"></div></div><div class="gt-home-bar"></div></div>';
-        lbTrack.appendChild(slide);
-        lbPhones.push({ label: p.dataset.label, el: slide });
-        var dot = document.createElement('div');
-        dot.className = 'lb-dot' + (i === startIdx ? ' active' : '');
-        dot.addEventListener('click', function(){ goToSlide(i); });
-        lbDots.appendChild(dot);
-      });
-    } else {
-      var p = phones[startIdx];
+    phones.forEach(function(p, i){
       var slide = document.createElement('div');
       slide.className = 'lb-slide';
       slide.innerHTML = '<div class="gt-frame gt-mobile"><div class="gt-viewport"><div class="gt-scroll-img" style="background:url(\'' + p.dataset.img + '\') top center/cover"></div></div><div class="gt-home-bar"></div></div>';
       lbTrack.appendChild(slide);
       lbPhones.push({ label: p.dataset.label, el: slide });
-    }
-    lbCurrent = isMobile ? startIdx : 0;
-    lbLabel.textContent = isMobile ? lbPhones[startIdx].label : lbPhones[0].label;
+      if(isMobile){
+        var dot = document.createElement('div');
+        dot.className = 'lb-dot' + (i === startIdx ? ' active' : '');
+        dot.addEventListener('click', function(){ goToSlide(i); });
+        lbDots.appendChild(dot);
+      }
+    });
+    lbCurrent = startIdx;
+    lbLabel.textContent = lbPhones[startIdx].label;
     lbModal.classList.add('open');
-    if(isMobile) setTimeout(function(){ lbTrack.scrollLeft = startIdx * lbTrack.offsetWidth; }, 50);
+    setTimeout(function(){
+      if(isMobile) lbTrack.scrollLeft = startIdx * lbTrack.offsetWidth;
+      else lbTrack.scrollLeft = startIdx * lbTrack.offsetWidth;
+    }, 50);
   }
 
   function goToSlide(idx){
