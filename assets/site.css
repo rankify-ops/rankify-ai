@@ -140,7 +140,7 @@ img{max-width:100%;display:block}
 .gf-btn:hover{color:var(--brand);border-color:rgba(7,168,137,.3)}
 .gf-btn.active{background:rgba(7,168,137,.08);color:var(--brand);border-color:rgba(7,168,137,.3);box-shadow:0 2px 8px rgba(7,168,137,.1)}
 
-.gallery-grid{display:flex;gap:24px;overflow:hidden;padding-bottom:16px;margin-left:calc(-1 * clamp(24px,4vw,80px));margin-right:calc(-1 * clamp(24px,4vw,80px));padding-left:clamp(24px,4vw,80px);padding-right:clamp(24px,4vw,80px)}
+.gallery-grid{display:flex;gap:24px;overflow:hidden;padding:24px 0 16px;margin-left:calc(-1 * clamp(24px,4vw,80px));margin-right:calc(-1 * clamp(24px,4vw,80px));padding-left:clamp(24px,4vw,80px);padding-right:clamp(24px,4vw,80px)}
 .gallery-track{display:flex;gap:24px;animation:gallery-scroll 30s linear infinite}
 @keyframes gallery-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .gallery-tile{flex:0 0 280px}
@@ -151,7 +151,7 @@ img{max-width:100%;display:block}
 
 /* Phone frame — iPhone style */
 .gt-frame.gt-mobile{background:linear-gradient(145deg,#2a2a2a 0%,#1a1a1a 50%,#111 100%);border-radius:36px;padding:12px 10px;position:relative;
-  box-shadow:0 8px 32px rgba(0,0,0,.25),0 2px 8px rgba(0,0,0,.15),inset 0 1px 0 rgba(255,255,255,.12),inset 0 -1px 0 rgba(0,0,0,.3);
+  box-shadow:0 4px 16px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.12),inset 0 -1px 0 rgba(0,0,0,.3);
   border:1px solid rgba(255,255,255,.06)}
 .gt-notch{display:none}
 .gt-viewport{border-radius:26px;overflow:hidden;position:relative;aspect-ratio:9/19.5}
