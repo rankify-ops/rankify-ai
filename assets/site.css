@@ -451,7 +451,8 @@ img{max-width:100%;display:block}
 @media(min-width:769px){
   .lb-track{overflow:hidden;scroll-snap-type:none;width:auto;max-width:none}
   .lb-slide{flex:0 0 auto}
-  .lb-slide .gt-frame.gt-mobile{max-width:none;width:min(50vw, 800px)}
+  .lb-slide .gt-frame.gt-mobile{max-width:none;width:auto}
+  .lb-slide .gt-viewport{height:80vh;width:calc(80vh * 9 / 19.5);aspect-ratio:auto}
   .lb-dots{display:none}
 }
 
