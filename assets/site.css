@@ -414,7 +414,7 @@ img{max-width:100%;display:block}
 .dd-carousel-wrap::-webkit-scrollbar{height:6px}
 .dd-carousel-wrap::-webkit-scrollbar-track{background:transparent}
 .dd-carousel-wrap::-webkit-scrollbar-thumb{background:rgba(7,168,137,.3);border-radius:3px}
-.dd-carousel{display:flex;gap:20px;padding:0 12px;width:max-content}
+.dd-carousel{display:flex;gap:20px;padding:0 12px;justify-content:center}
 .dd-phone{scroll-snap-align:center;flex:0 0 200px;text-align:center;transition:transform .3s;cursor:pointer}
 .dd-phone:hover{transform:translateY(-4px)}
 .dd-phone .gt-frame.gt-mobile{padding:8px 7px}
@@ -445,6 +445,10 @@ img{max-width:100%;display:block}
 .lb-dots{position:relative;z-index:1;display:flex;gap:8px;margin-top:16px}
 .lb-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);transition:all .2s;cursor:pointer}
 .lb-dot.active{background:var(--brand);transform:scale(1.3)}
+@media(min-width:769px){
+  .lb-track{overflow:hidden;scroll-snap-type:none}
+  .lb-dots{display:none}
+}
 
 /* ================ PULLQUOTE (glass) ================ */
 .pullquote{margin-top:56px;padding:40px 48px;background:var(--card-bg);border:1px solid var(--card-border);border-left:4px solid var(--brand);border-radius:0 var(--r) var(--r) 0;backdrop-filter:blur(16px) saturate(1.6);-webkit-backdrop-filter:blur(16px) saturate(1.6);box-shadow:var(--neu-shadow)}

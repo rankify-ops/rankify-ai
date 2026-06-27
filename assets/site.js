@@ -200,24 +200,12 @@
   }
 
   // Gallery click handler (event delegation on track for duplicated tiles)
-  var activeTile = null;
   if(track){
     track.addEventListener('click', function(ev){
       var tile = ev.target.closest('.gallery-tile');
       if(!tile) return;
       var idx = parseInt(tile.dataset.site);
-      if(window.innerWidth <= 768){
-        if(activeTile && activeTile !== tile) activeTile.classList.remove('active');
-        if(tile.classList.contains('active')){
-          if(idx === 0) openDeepDive(idx); else openCaseStudy(idx);
-        } else {
-          tile.classList.add('active');
-          activeTile = tile;
-          ev.stopPropagation();
-        }
-      } else {
-        if(idx === 0) openDeepDive(idx); else openCaseStudy(idx);
-      }
+      if(idx === 0) openDeepDive(idx); else openCaseStudy(idx);
     });
   }
 
@@ -300,21 +288,31 @@
     lbTrack.innerHTML = '';
     lbDots.innerHTML = '';
     lbPhones = [];
-    phones.forEach(function(p, i){
+    var isMobile = window.innerWidth <= 768;
+    if(isMobile){
+      phones.forEach(function(p, i){
+        var slide = document.createElement('div');
+        slide.className = 'lb-slide';
+        slide.innerHTML = '<div class="gt-frame gt-mobile"><div class="gt-viewport"><div class="gt-scroll-img" style="background:url(\'' + p.dataset.img + '\') top center/cover"></div></div><div class="gt-home-bar"></div></div>';
+        lbTrack.appendChild(slide);
+        lbPhones.push({ label: p.dataset.label, el: slide });
+        var dot = document.createElement('div');
+        dot.className = 'lb-dot' + (i === startIdx ? ' active' : '');
+        dot.addEventListener('click', function(){ goToSlide(i); });
+        lbDots.appendChild(dot);
+      });
+    } else {
+      var p = phones[startIdx];
       var slide = document.createElement('div');
       slide.className = 'lb-slide';
       slide.innerHTML = '<div class="gt-frame gt-mobile"><div class="gt-viewport"><div class="gt-scroll-img" style="background:url(\'' + p.dataset.img + '\') top center/cover"></div></div><div class="gt-home-bar"></div></div>';
       lbTrack.appendChild(slide);
       lbPhones.push({ label: p.dataset.label, el: slide });
-      var dot = document.createElement('div');
-      dot.className = 'lb-dot' + (i === startIdx ? ' active' : '');
-      dot.addEventListener('click', function(){ goToSlide(i); });
-      lbDots.appendChild(dot);
-    });
-    lbCurrent = startIdx;
-    lbLabel.textContent = lbPhones[startIdx].label;
+    }
+    lbCurrent = isMobile ? startIdx : 0;
+    lbLabel.textContent = isMobile ? lbPhones[startIdx].label : lbPhones[0].label;
     lbModal.classList.add('open');
-    setTimeout(function(){ lbTrack.scrollLeft = startIdx * lbTrack.offsetWidth; }, 50);
+    if(isMobile) setTimeout(function(){ lbTrack.scrollLeft = startIdx * lbTrack.offsetWidth; }, 50);
   }
 
   function goToSlide(idx){
