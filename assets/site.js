@@ -304,19 +304,23 @@
     });
     lbCurrent = startIdx;
     lbLabel.textContent = lbPhones[startIdx].label;
+    if(!isMobile){
+      lbTrack.querySelectorAll('.lb-slide').forEach(function(s, i){ s.style.display = i === startIdx ? '' : 'none'; });
+    }
     lbModal.classList.add('open');
-    setTimeout(function(){
-      if(isMobile) lbTrack.scrollLeft = startIdx * lbTrack.offsetWidth;
-      else lbTrack.scrollLeft = startIdx * lbTrack.offsetWidth;
-    }, 50);
+    if(isMobile) setTimeout(function(){ lbTrack.scrollLeft = startIdx * lbTrack.offsetWidth; }, 50);
   }
 
   function goToSlide(idx){
     if(idx < 0 || idx >= lbPhones.length) return;
     lbCurrent = idx;
-    lbTrack.scrollTo({ left: idx * lbTrack.offsetWidth, behavior: 'smooth' });
     lbLabel.textContent = lbPhones[idx].label;
     lbDots.querySelectorAll('.lb-dot').forEach(function(d, i){ d.classList.toggle('active', i === idx); });
+    if(window.innerWidth <= 768){
+      lbTrack.scrollTo({ left: idx * lbTrack.offsetWidth, behavior: 'smooth' });
+    } else {
+      lbTrack.querySelectorAll('.lb-slide').forEach(function(s, i){ s.style.display = i === idx ? '' : 'none'; });
+    }
   }
 
   if(lbTrack){
