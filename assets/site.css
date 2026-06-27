@@ -140,9 +140,11 @@ img{max-width:100%;display:block}
 .gf-btn:hover{color:var(--brand);border-color:rgba(7,168,137,.3)}
 .gf-btn.active{background:rgba(7,168,137,.08);color:var(--brand);border-color:rgba(7,168,137,.3);box-shadow:0 2px 8px rgba(7,168,137,.1)}
 
-.gallery-grid{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:16px;scrollbar-width:none}
-.gallery-grid::-webkit-scrollbar{display:none}
-.gallery-tile{scroll-snap-align:start;flex:0 0 280px}
+.gallery-grid{display:flex;gap:24px;overflow:hidden;padding-bottom:16px}
+.gallery-track{display:flex;gap:24px;animation:gallery-scroll 30s linear infinite}
+.gallery-track:hover{animation-play-state:paused}
+@keyframes gallery-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.gallery-tile{flex:0 0 280px}
 
 .gallery-tile{cursor:pointer;transition:all .4s ease;opacity:1;transform:scale(1)}
 .gallery-tile.hiding{opacity:0;transform:scale(.95);pointer-events:none}

@@ -192,45 +192,12 @@
     {name:'SH Roofing',industry:'Roofing · Trades',metric:'$100K → $2M revenue',problem:'Small operation doing under $100K/year. No online presence, no way to scale beyond word of mouth.',result:'Scaled from under $100K to $2M annual revenue in 12 months. The website was the foundation.',whatIDid:['High-converting layout with emergency CTA and instant quote form','Before/after project gallery building trust instantly','Local SEO across multiple service areas for maximum reach'],quote:'Within 2 weeks of launching we had our best month ever. The website pays for itself ten times over.',author:'Sam H., SH Roofing'}
   ];
 
-  // Device toggle
-  var deviceBtns = document.querySelectorAll('.gdt-btn');
-  deviceBtns.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      deviceBtns.forEach(function(b){ b.classList.remove('active'); });
-      btn.classList.add('active');
-      var device = btn.dataset.device;
-      document.querySelectorAll('.gallery-tile').forEach(function(tile){
-        var mob = tile.querySelector('.gt-mobile');
-        var desk = tile.querySelector('.gt-desktop');
-        if(device === 'mobile'){
-          mob.style.display = '';
-          desk.style.display = 'none';
-        } else {
-          mob.style.display = 'none';
-          desk.style.display = '';
-        }
-      });
-    });
-  });
-
-  // Industry filter
-  var filterBtns = document.querySelectorAll('.gf-btn');
-  filterBtns.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      filterBtns.forEach(function(b){ b.classList.remove('active'); });
-      btn.classList.add('active');
-      var f = btn.dataset.filter;
-      document.querySelectorAll('.gallery-tile').forEach(function(tile){
-        var ind = tile.dataset.industry;
-        if(f === 'all' || ind === f){
-          tile.classList.remove('hiding','hidden');
-        } else {
-          tile.classList.add('hiding');
-          setTimeout(function(){ tile.classList.add('hidden'); }, 300);
-        }
-      });
-    });
-  });
+  // Duplicate tiles for infinite scroll
+  var track = document.querySelector('.gallery-track');
+  if (track) {
+    var tiles = track.innerHTML;
+    track.innerHTML = tiles + tiles;
+  }
 
   // Mobile tap-to-scroll (one at a time)
   var activeTile = null;
