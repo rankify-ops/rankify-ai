@@ -334,6 +334,11 @@
     });
   }
 
+  var lbPrev = document.getElementById('lbPrev');
+  var lbNext = document.getElementById('lbNext');
+  if(lbPrev) lbPrev.addEventListener('click', function(){ goToSlide(lbCurrent - 1); });
+  if(lbNext) lbNext.addEventListener('click', function(){ goToSlide(lbCurrent + 1); });
+
   function closeLightbox(){
     if(!lbModal) return;
     lbModal.classList.remove('open');
