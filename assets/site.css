@@ -383,6 +383,13 @@ img{max-width:100%;display:block}
 .cmp-row .cmp-col{padding:16px 20px;font-size:.88rem;text-align:center;color:var(--g500)}
 .cmp-row .cmp-col.cmp-agency{color:var(--g400)}
 .cmp-row .cmp-col.cmp-rankify{color:var(--brand);font-weight:600;background:rgba(7,168,137,.04)}
+.cmp-row{transition:background .2s}
+.cmp-row:hover{background:rgba(7,168,137,.03)}
+.cmp-row:hover .cmp-col.cmp-rankify{background:rgba(7,168,137,.08)}
+.cmp-icon{vertical-align:-3px;margin-right:6px;color:var(--g400);flex-shrink:0}
+.cmp-x{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:rgba(239,68,68,.1);color:#ef4444;font-size:.75rem;font-weight:700;margin-right:6px;flex-shrink:0}
+.cmp-check{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:rgba(7,168,137,.12);color:var(--brand);font-size:.8rem;font-weight:700;margin-right:6px;flex-shrink:0}
+.cmp-col-h svg{vertical-align:-4px;margin-right:4px}
 
 /* ================ PULLQUOTE (glass) ================ */
 .pullquote{margin-top:56px;padding:40px 48px;background:var(--card-bg);border:1px solid var(--card-border);border-left:4px solid var(--brand);border-radius:0 var(--r) var(--r) 0;backdrop-filter:blur(16px) saturate(1.6);-webkit-backdrop-filter:blur(16px) saturate(1.6);box-shadow:var(--neu-shadow)}
