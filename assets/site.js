@@ -205,7 +205,7 @@
       var tile = ev.target.closest('.gallery-tile');
       if(!tile) return;
       var idx = parseInt(tile.dataset.site);
-      if(idx === 0) openDeepDive(idx); else openCaseStudy(idx);
+      if(deepDivePages[idx]) openDeepDive(idx); else openCaseStudy(idx);
     });
   }
 
@@ -245,8 +245,25 @@
     document.body.style.overflow = '';
   }
 
-  // Deep dive modal (Hiatus)
+  // Deep dive page data per site
+  var deepDivePages = {
+    0: [
+      {label:'Home', img:'images/hiatus-home.webp'},
+      {label:"Men's Rings", img:'images/hiatus-rings.webp'},
+      {label:'Product Page', img:'images/hiatus-product.webp'},
+      {label:'Ring Size Chart', img:'images/hiatus-sizing.webp'}
+    ],
+    2: [
+      {label:'Home', img:'images/hawker-home.webp'},
+      {label:'Book Studio', img:'images/hawker-book.webp'},
+      {label:'Hire Rates', img:'images/hawker-rates.webp'},
+      {label:'Studio Hire', img:'images/hawker-studio.webp'}
+    ]
+  };
+
+  // Deep dive modal
   var ddModal = document.getElementById('ddModal');
+  var ddCarousel = document.getElementById('ddCarousel');
   function openDeepDive(idx){
     var cs = caseStudies[idx];
     if(!cs || !ddModal) return;
@@ -254,6 +271,21 @@
     document.getElementById('ddSiteName').textContent = cs.name;
     document.getElementById('ddIndustry').textContent = cs.industry;
     document.getElementById('ddResult').textContent = cs.result;
+    // Populate carousel
+    var pages = deepDivePages[idx] || [];
+    ddCarousel.innerHTML = '';
+    pages.forEach(function(p){
+      var div = document.createElement('div');
+      div.className = 'dd-phone';
+      div.dataset.label = p.label;
+      div.dataset.img = p.img;
+      div.innerHTML = '<div class="gt-frame gt-mobile"><div class="gt-viewport"><div class="gt-scroll-img" style="background:url(\'' + p.img + '\') top center/cover"></div></div><div class="gt-home-bar"></div></div>';
+      ddCarousel.appendChild(div);
+    });
+    // Rebind lightbox clicks
+    ddCarousel.querySelectorAll('.dd-phone').forEach(function(phone, i){
+      phone.addEventListener('click', function(){ openLightbox(i); });
+    });
     ddModal.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -267,10 +299,6 @@
     ddModal.querySelector('.dd-close').addEventListener('click', closeDdModal);
     document.addEventListener('keydown', function(ev){
       if(ev.key === 'Escape' && ddModal.classList.contains('open')) closeDdModal();
-    });
-    // Click phone to open lightbox
-    ddModal.querySelectorAll('.dd-phone').forEach(function(phone, i){
-      phone.addEventListener('click', function(){ openLightbox(i); });
     });
   }
 
