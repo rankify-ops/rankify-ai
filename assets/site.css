@@ -52,12 +52,14 @@ img{max-width:100%;display:block}
 .nav.scrolled .nav-cta--outline:hover{background:rgba(255,255,255,.7);color:var(--g900);box-shadow:var(--neu-shadow-hover)}
 .nav-cta svg{vertical-align:middle}
 .mob-tog{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:201;position:relative}
-.mob-tog span{display:block;width:22px;height:2px;background:#fff;margin:5px 0;border-radius:2px;transition:all .3s}
+.mob-tog span{display:block;height:2px;background:#fff;margin:5px 0;border-radius:2px;transition:all .3s}
+.mob-tog span:nth-child(1){width:22px}
+.mob-tog span:nth-child(2){width:16px}
+.mob-tog span:nth-child(3){display:none}
 .nav.scrolled .mob-tog span{background:var(--g700)}
 .mob-tog.open span{background:#fff!important}
-.mob-tog.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.mob-tog.open span:nth-child(2){opacity:0}
-.mob-tog.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-tog.open span:nth-child(1){width:22px;transform:translateY(3.5px) rotate(45deg)}
+.mob-tog.open span:nth-child(2){width:22px;transform:translateY(-3.5px) rotate(-45deg)}
 
 /* MOBILE DRAWER */
 .mdrawer{position:fixed;inset:0;z-index:150;background:rgba(3,7,18,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;flex-direction:column;padding:88px 28px 28px;opacity:0;visibility:hidden;transform:translateY(-12px);transition:all .3s ease;overflow-y:auto}
