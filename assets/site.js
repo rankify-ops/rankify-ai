@@ -409,4 +409,27 @@
     });
   }
 
+  // Cal.com modal
+  var calModal = document.getElementById('calModal');
+  var calFrame = document.getElementById('calFrame');
+  window.openCalModal = function(){
+    if(!calModal) return;
+    calFrame.src = 'https://cal.com/rankify/call?embed=true';
+    calModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+  function closeCalModal(){
+    if(!calModal) return;
+    calModal.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(function(){ calFrame.src = ''; }, 300);
+  }
+  if(calModal){
+    calModal.querySelector('.cal-backdrop').addEventListener('click', closeCalModal);
+    calModal.querySelector('.cal-close').addEventListener('click', closeCalModal);
+    document.addEventListener('keydown', function(ev){
+      if(ev.key === 'Escape' && calModal.classList.contains('open')) closeCalModal();
+    });
+  }
+
 })();
