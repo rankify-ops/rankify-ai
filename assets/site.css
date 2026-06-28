@@ -370,12 +370,12 @@ img{max-width:100%;display:block}
 .ben-card p{font-size:.86rem;color:var(--g500);line-height:1.6}
 
 /* ================ AGENCY REFRAME — COMPARISON TABLE ================ */
-.reframe-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,4vw,80px);align-items:start}
+.reframe-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,4vw,80px);align-items:start;align-content:start}
 .reframe-copy{order:2}
 .cmp-wrap{order:1}
 .reframe-copy .sec-sub{max-width:100%}
 .cmp-wrap{position:sticky;top:120px}
-.cmp-title{font-size:clamp(.95rem,1vw,1.25rem);font-weight:800;color:var(--g900);margin-bottom:16px;letter-spacing:-.02em;line-height:1.7}
+.cmp-title{font-size:.95rem;font-weight:800;color:var(--g900);letter-spacing:-.02em;line-height:1.4}
 .cmp-table{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--r);overflow:hidden;backdrop-filter:blur(16px) saturate(1.6);-webkit-backdrop-filter:blur(16px) saturate(1.6);box-shadow:var(--neu-shadow)}
 .cmp-header,.cmp-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
 .cmp-header{border-bottom:2px solid rgba(0,0,0,.06)}
