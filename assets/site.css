@@ -638,11 +638,11 @@ img{max-width:100%;display:block}
   .ben-grid{grid-template-columns:1fr}
   .cmp-header{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid rgba(0,0,0,.08)}
   .cmp-header .cmp-label.cmp-title{grid-column:1/-1;padding:16px 16px 12px;font-size:.85rem;border-bottom:1px solid rgba(0,0,0,.06);text-align:center}
-  .cmp-col-h{padding:10px 16px;font-size:.68rem;text-align:center;border-bottom:1px solid rgba(0,0,0,.06)}
+  .cmp-col-h{padding:10px 16px;font-size:.68rem;text-align:center;border-bottom:1px solid rgba(0,0,0,.06);display:block;justify-content:center}
   .cmp-header .cmp-col-h.cmp-agency{border-right:1px solid rgba(0,0,0,.06)}
   .cmp-row{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid rgba(0,0,0,.06)}
   .cmp-row:last-child{border-bottom:none}
-  .cmp-row .cmp-label{grid-column:1/-1;padding:10px 16px;font-size:.72rem;color:var(--g400);letter-spacing:.8px;text-transform:uppercase;text-align:center;font-weight:600;border-bottom:1px solid rgba(0,0,0,.06)}
+  .cmp-row .cmp-label{grid-column:1/-1;padding:10px 16px;font-size:.72rem;color:var(--g400);letter-spacing:.8px;text-transform:uppercase;text-align:center;font-weight:600;border-bottom:1px solid rgba(0,0,0,.06);display:block;min-height:auto;justify-content:center}
   .cmp-row .cmp-label .cmp-icon{display:none}
   .cmp-row .cmp-col{text-align:center;padding:10px 12px;font-size:.82rem;justify-content:center;font-weight:400}
   .cmp-row .cmp-col.cmp-agency{border-right:1px solid rgba(0,0,0,.06)}
