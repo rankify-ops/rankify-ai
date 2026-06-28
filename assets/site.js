@@ -414,7 +414,8 @@
   var calFrame = document.getElementById('calFrame');
   window.openCalModal = function(){
     if(!calModal) return;
-    calFrame.src = 'https://cal.com/rankify/call?embed=true';
+    var layout = window.innerWidth > 768 ? 'month_view' : 'mobile';
+    calFrame.src = 'https://cal.com/rankify/call?embed=true&layout=' + layout;
     calModal.classList.add('open');
     document.body.style.overflow = 'hidden';
   };

@@ -461,7 +461,8 @@ img{max-width:100%;display:block}
 .cal-modal{position:fixed;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s ease}
 .cal-modal.open{opacity:1;visibility:visible}
 .cal-modal .cal-backdrop{position:absolute;inset:0;background:rgba(3,7,18,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.cal-modal .cal-content{position:relative;width:94%;max-width:560px;height:85vh;max-height:750px;border-radius:var(--r);overflow:hidden;transform:translateY(20px) scale(.97);transition:transform .3s ease;background:var(--g900)}
+.cal-modal .cal-content{position:relative;width:94%;max-width:1000px;height:85vh;max-height:750px;border-radius:var(--r);overflow:hidden;transform:translateY(20px) scale(.97);transition:transform .3s ease;background:var(--g900)}
+@media(max-width:768px){.cal-modal .cal-content{max-width:560px}}
 .cal-modal.open .cal-content{transform:translateY(0) scale(1)}
 .cal-modal .cal-close{position:absolute;top:12px;right:12px;z-index:10;width:36px;height:36px;border:none;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);transition:background .2s}
 .cal-modal .cal-close:hover{background:rgba(255,255,255,.3)}
