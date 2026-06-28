@@ -632,7 +632,8 @@ img{max-width:100%;display:block}
   .cmp-header .cmp-label.cmp-title{grid-column:1/-1;padding:16px 16px 12px;font-size:.85rem;border-bottom:1px solid rgba(0,0,0,.06);text-align:center}
   .cmp-col-h{padding:10px 16px;font-size:.68rem;text-align:center;border-bottom:1px solid rgba(0,0,0,.06)}
   .cmp-header .cmp-col-h.cmp-agency{border-right:1px solid rgba(0,0,0,.06)}
-  .cmp-row{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid rgba(0,0,0,.06)}
+  .cmp-row{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid rgba(0,0,0,.06);transition:none}
+  .cmp-row:hover{background:transparent}
   .cmp-row:last-child{border-bottom:none}
   .cmp-row .cmp-label{grid-column:1/-1;padding:10px 16px;font-size:.72rem;color:var(--g400);letter-spacing:.8px;text-transform:uppercase;text-align:center;font-weight:600;border-bottom:1px solid rgba(0,0,0,.06)}
   .cmp-row .cmp-label .cmp-icon{display:none}
