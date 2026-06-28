@@ -375,7 +375,7 @@ img{max-width:100%;display:block}
 .cmp-wrap{order:1}
 .reframe-copy .sec-sub{max-width:100%}
 .cmp-wrap{position:sticky;top:120px}
-.cmp-title{font-size:.95rem;font-weight:800;color:var(--g900);letter-spacing:-.02em;line-height:1.4}
+.cmp-title{font-size:.95rem;font-weight:700;color:var(--g700);letter-spacing:normal;line-height:1.4}
 .cmp-table{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--r);overflow:hidden;backdrop-filter:blur(16px) saturate(1.6);-webkit-backdrop-filter:blur(16px) saturate(1.6);box-shadow:var(--neu-shadow)}
 .cmp-header,.cmp-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
 .cmp-header{border-bottom:2px solid rgba(0,0,0,.06)}
