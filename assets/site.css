@@ -394,7 +394,7 @@ img{max-width:100%;display:block}
 .cmp-header,.cmp-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
 .cmp-header{border-bottom:2px solid rgba(0,0,0,.06)}
 .cmp-header .cmp-label{padding:16px 20px}
-.cmp-header .cmp-label.cmp-title{grid-column:1/-1;border-bottom:1px solid rgba(0,0,0,.06)}
+.cmp-header .cmp-label.cmp-title{border-bottom:none}
 .cmp-col-h{padding:16px 20px;font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;text-align:left}
 .cmp-col-h.cmp-agency{color:var(--g400)}
 .cmp-col-h.cmp-rankify{color:var(--brand)}
