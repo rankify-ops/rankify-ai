@@ -602,6 +602,7 @@ img{max-width:100%;display:block}
   .bridge-stats{flex-direction:row}
 }
 @media(max-width:768px){
+  .logo img{position:relative;top:2px}
   .nav-cta{display:none}
   .sec{padding:64px 0}
   .hero{padding:100px 0 56px}
