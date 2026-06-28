@@ -43,8 +43,8 @@ img{max-width:100%;display:block}
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(7,168,137,.3),inset 0 1px 0 rgba(255,255,255,.3)}
 .nav-ph{font-size:.87rem;font-weight:700;color:var(--g700);transition:color .2s;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
 .nav-ph svg{width:16px;height:16px}
-.nav-cta--outline{background:transparent;color:var(--g800);border:1.5px solid var(--g300);box-shadow:none;display:inline-flex;align-items:center;gap:6px}
-.nav-cta--outline:hover{background:var(--g100);box-shadow:none;border-color:var(--g400)}
+.nav-cta--outline{background:rgba(255,255,255,.5);color:var(--g600);border:1px solid rgba(255,255,255,.7);box-shadow:var(--neu-shadow);display:inline-flex;align-items:center;gap:6px}
+.nav-cta--outline:hover{background:rgba(255,255,255,.7);color:var(--g900);box-shadow:var(--neu-shadow-hover);transform:translateY(-1px)}
 .nav-cta svg{vertical-align:middle}
 .mob-tog{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:201;position:relative}
 .mob-tog span{display:block;width:22px;height:2px;background:var(--g700);margin:5px 0;border-radius:2px;transition:all .3s}
