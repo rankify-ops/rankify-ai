@@ -403,7 +403,7 @@ img{max-width:100%;display:block}
 .cmp-header{border-bottom:2px solid rgba(0,0,0,.06)}
 .cmp-header .cmp-label{padding:clamp(10px,1.2vw,16px) clamp(12px,1.5vw,20px)}
 .cmp-header .cmp-label.cmp-title{border-bottom:none}
-.cmp-col-h{padding:clamp(10px,1.2vw,16px) clamp(12px,1.5vw,20px);font-size:clamp(.65rem,0.9vw,.75rem);text-transform:uppercase;letter-spacing:1.5px;font-weight:700;text-align:left}
+.cmp-col-h{padding:clamp(10px,1.2vw,16px) clamp(12px,1.5vw,20px);font-size:clamp(.65rem,0.9vw,.75rem);text-transform:uppercase;letter-spacing:1.5px;font-weight:700;text-align:left;display:flex;align-items:center}
 .cmp-col-h.cmp-agency{color:var(--g400)}
 .cmp-col-h.cmp-rankify{color:rgb(4,60,48)}
 .cmp-row{border-bottom:1px solid rgba(0,0,0,.04)}
