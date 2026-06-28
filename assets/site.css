@@ -405,21 +405,21 @@ img{max-width:100%;display:block}
 .cmp-header .cmp-label.cmp-title{border-bottom:none}
 .cmp-col-h{padding:16px 20px;font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;text-align:left}
 .cmp-col-h.cmp-agency{color:var(--g400)}
-.cmp-col-h.cmp-rankify{color:var(--brand)}
+.cmp-col-h.cmp-rankify{color:rgb(4,60,48)}
 .cmp-row{border-bottom:1px solid rgba(0,0,0,.04)}
 .cmp-row:nth-child(even){background:rgba(0,0,0,.02)}
 .cmp-row:last-child{border-bottom:none}
 .cmp-row .cmp-label{padding:16px 20px;font-size:.95rem;font-weight:700;color:var(--g700)}
 .cmp-row .cmp-col{padding:16px 20px;font-size:.95rem;text-align:left;color:var(--g500);display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:6px}
 .cmp-row .cmp-col.cmp-agency{color:var(--g400)}
-.cmp-row .cmp-col.cmp-rankify{color:var(--brand);font-weight:600}
+.cmp-row .cmp-col.cmp-rankify{color:rgb(4,60,48);font-weight:600}
 .cmp-row{transition:background .2s}
 .cmp-row:hover{background:rgba(7,168,137,.03)}
 .cmp-row:hover .cmp-col.cmp-rankify{}
 .cmp-icon{vertical-align:-3px;margin-right:6px;color:var(--g400);flex-shrink:0}
 .cmp-x{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:rgba(239,68,68,.1);color:#ef4444;font-size:.75rem;font-weight:700;margin-right:6px;flex-shrink:0}
 .cmp-check{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:rgba(7,168,137,.12);color:var(--brand);font-size:.8rem;font-weight:700;margin-right:6px;flex-shrink:0}
-.cmp-row--highlight{background:linear-gradient(135deg,var(--brand) 0%,#05c49e 100%)!important;border-top:none;border-bottom:none;position:relative}
+.cmp-row--highlight{background:linear-gradient(135deg,rgb(4,60,48) 0%,rgb(6,90,72) 100%)!important;border-top:none;border-bottom:none;position:relative}
 .cmp-row--highlight .cmp-label{color:#fff!important}
 .cmp-row--highlight .cmp-col{color:rgba(255,255,255,.7)!important}
 .cmp-row--highlight .cmp-col.cmp-rankify{color:#fff!important}
