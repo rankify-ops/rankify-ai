@@ -258,6 +258,12 @@
       {label:'Book Studio', img:'images/hawker-book.webp'},
       {label:'Hire Rates', img:'images/hawker-rates.webp'},
       {label:'Studio Hire', img:'images/hawker-studio.webp'}
+    ],
+    4: [
+      {label:'Home', img:'images/myoko-home.webp'},
+      {label:'Product Page', img:'images/myoko-product.webp'},
+      {label:'About Us', img:'images/myoko-about.webp'},
+      {label:'Reviews', img:'images/myoko-reviews.webp'}
     ]
   };
 
