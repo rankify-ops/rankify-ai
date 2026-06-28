@@ -35,7 +35,7 @@ img{max-width:100%;display:block}
 .nav-in{max-width:var(--ctr-max);margin:0 auto;padding:0 clamp(24px,4vw,80px);display:flex;align-items:center;justify-content:space-between;gap:16px}
 .logo{display:flex;align-items:center;gap:8px}
 .logo img{height:32px;width:auto;display:block;filter:brightness(0) invert(1);transition:filter .3s;position:relative;top:2px}
-.nav.scrolled .logo img{filter:brightness(0) saturate(100%) invert(15%) sepia(50%) saturate(800%) hue-rotate(130deg) brightness(90%)}
+.nav.scrolled .logo img{filter:brightness(0) invert(20%) sepia(90%) saturate(500%) hue-rotate(130deg) brightness(60%)}
 .nav-l{display:flex;align-items:center;gap:28px;list-style:none}
 .nav-l>li>a{font-size:.87rem;font-weight:600;color:rgba(255,255,255,.85);transition:color .2s;display:inline-flex;align-items:center;gap:5px;padding:8px 0}
 .nav-l>li>a:hover{color:#fff}
