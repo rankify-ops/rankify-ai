@@ -584,7 +584,8 @@ img{max-width:100%;display:block}
   .hero-split{grid-template-columns:1fr}
   .vid-placeholder-hero{aspect-ratio:16/9}
   .reframe-grid{grid-template-columns:1fr}
-  .cmp-wrap{position:static}
+  .reframe-copy{order:1}
+  .cmp-wrap{order:2;position:static}
   .dev-grid{grid-template-columns:1fr}
   .dev-photo-placeholder{max-width:320px;aspect-ratio:1/1}
   .gallery-tile{flex:0 0 260px}
