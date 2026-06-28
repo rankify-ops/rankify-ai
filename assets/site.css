@@ -395,7 +395,11 @@ img{max-width:100%;display:block}
 .cmp-icon{vertical-align:-3px;margin-right:6px;color:var(--g400);flex-shrink:0}
 .cmp-x{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:rgba(239,68,68,.1);color:#ef4444;font-size:.75rem;font-weight:700;margin-right:6px;flex-shrink:0}
 .cmp-check{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:rgba(7,168,137,.12);color:var(--brand);font-size:.8rem;font-weight:700;margin-right:6px;flex-shrink:0}
-.cmp-row--highlight{background:rgba(7,168,137,.06);border-top:2px solid rgba(7,168,137,.15)}
+.cmp-row--highlight{background:transparent;border-top:2px solid rgba(7,168,137,.2);border-bottom:2px solid rgba(7,168,137,.2);position:relative;overflow:hidden}
+.cmp-row--highlight::before{content:'';position:absolute;top:-2px;left:-100%;width:60%;height:2px;background:linear-gradient(90deg,transparent,var(--brand),transparent);animation:shineTop 3s ease-in-out infinite}
+.cmp-row--highlight::after{content:'';position:absolute;bottom:-2px;right:-100%;width:60%;height:2px;background:linear-gradient(90deg,transparent,var(--brand),transparent);animation:shineBottom 3s ease-in-out infinite}
+@keyframes shineTop{0%{left:-60%}50%{left:100%}100%{left:100%}}
+@keyframes shineBottom{0%{right:-60%}50%{right:100%}100%{right:100%}}
 .cmp-row--highlight .cmp-label{font-weight:800;color:var(--g900)}
 .cmp-row--highlight .cmp-col.cmp-rankify{font-weight:800;font-size:1rem}
 .cmp-sub-label{padding:12px 20px;font-size:.8rem;color:var(--g400);font-style:italic;text-align:center;border-top:1px solid rgba(0,0,0,.04)}
