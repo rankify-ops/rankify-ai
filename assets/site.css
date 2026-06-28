@@ -389,7 +389,7 @@ img{max-width:100%;display:block}
 .cmp-table-wrap{position:relative;border-radius:var(--r)}
 .cmp-table-wrap::before{content:'';position:absolute;inset:-2px;border-radius:var(--r);border:2px solid transparent;background:linear-gradient(90deg,rgba(7,168,137,.1),rgba(7,168,137,.5),rgba(7,168,137,.1)) border-box;-webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;background-size:200% 100%;animation:shineBorder 3s ease-in-out infinite;pointer-events:none}
 @keyframes shineBorder{0%{background-position:200% 0}100%{background-position:-200% 0}}
-.cmp-table{background:var(--card-bg);border-radius:calc(var(--r) - 1px);overflow:hidden;backdrop-filter:blur(16px) saturate(1.6);-webkit-backdrop-filter:blur(16px) saturate(1.6);box-shadow:var(--neu-shadow);position:relative;z-index:1}
+.cmp-table{background:rgba(255,255,255,.65);border-radius:calc(var(--r) - 1px);overflow:hidden;backdrop-filter:blur(12px) saturate(1.4);-webkit-backdrop-filter:blur(12px) saturate(1.4);box-shadow:var(--neu-shadow);position:relative;z-index:1}
 .cmp-header,.cmp-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
 .cmp-header{border-bottom:2px solid rgba(0,0,0,.06)}
 .cmp-header .cmp-label{padding:16px 20px}
