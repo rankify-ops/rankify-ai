@@ -417,6 +417,7 @@ img{max-width:100%;display:block}
 .cmp-row--highlight .cmp-col.cmp-rankify{color:#fff!important}
 .cmp-row--highlight .cmp-x{background:rgba(255,255,255,.2);color:#fff}
 .cmp-row--highlight .cmp-check{background:rgba(255,255,255,.25);color:#fff}
+.cmp-row--highlight .cmp-icon{color:#fff}
 .cmp-row--highlight::before,.cmp-row--highlight::after{content:'';position:absolute;left:0;width:100%;height:2px;background:rgba(7,168,137,.15)}
 .cmp-row--highlight::before{top:0}
 .cmp-row--highlight::after{bottom:0}
