@@ -88,7 +88,7 @@ function removeFloatingElements(pg) {
       var t = headings[i].textContent.toLowerCase();
       if (t.includes('60-second') || t.includes('60 second')) {
         var rect = headings[i].getBoundingClientRect();
-        window.scrollBy(0, rect.top - 200);
+        window.scrollBy(0, rect.top - 260);
         return 'found: ' + headings[i].textContent;
       }
     }
