@@ -62,15 +62,15 @@ function removeFloatingElements(pg) {
   await dismissPopup(pg);
   await removeFloatingElements(pg);
   await pg.evaluate(() => {
-    var headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div');
-    for (var i = 0; i < headings.length; i++) {
-      var t = headings[i].textContent.toLowerCase().trim();
-      if ((t.includes('our process') || t.includes('contact to completion') || t.includes('from contact')) && headings[i].offsetHeight < 200) {
-        var rect = headings[i].getBoundingClientRect();
-        window.scrollBy(0, rect.top - 20);
-        break;
+    var dividers = document.querySelectorAll('.divider, .sec-tag');
+    for (var i = 0; i < dividers.length; i++) {
+      if (dividers[i].textContent.trim().toLowerCase() === 'our process') {
+        var rect = dividers[i].getBoundingClientRect();
+        window.scrollBy(0, rect.top - 40);
+        return;
       }
     }
+    window.scrollTo(0, 6440);
   });
   await new Promise(r => setTimeout(r, 1500));
   await pg.screenshot({ path: 'images/tmp.png', fullPage: false });
@@ -88,24 +88,15 @@ function removeFloatingElements(pg) {
   await dismissPopup(pg);
   await removeFloatingElements(pg);
   await pg.evaluate(() => {
-    var forms = document.querySelectorAll('form, [class*="quote"], [class*="form"], [id*="quote"], [id*="form"]');
-    for (var i = 0; i < forms.length; i++) {
-      var el = forms[i];
-      if (el.offsetHeight > 100 && el.offsetHeight < 1000) {
-        var rect = el.getBoundingClientRect();
-        var scrollY = rect.top + window.scrollY - (window.innerHeight - rect.height) / 2;
-        window.scrollTo(0, Math.max(0, scrollY));
-        return 'found form: ' + (el.className || el.id || el.tagName);
-      }
-    }
-    // Fallback: search for text
-    var all = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-    for (var j = 0; j < all.length; j++) {
-      var t = all[j].textContent.toLowerCase();
-      if (t.includes('quote') || t.includes('get in touch') || t.includes('contact')) {
-        var r2 = all[j].getBoundingClientRect();
-        window.scrollBy(0, r2.top - 80);
-        return 'found heading: ' + all[j].textContent.substring(0, 40);
+    // Find "Quick 60-Second Quote" H3 at ~11299 and center the form below it
+    var headings = document.querySelectorAll('h3');
+    for (var i = 0; i < headings.length; i++) {
+      var t = headings[i].textContent.toLowerCase();
+      if (t.includes('60-second') || t.includes('60 second')) {
+        var rect = headings[i].getBoundingClientRect();
+        // Scroll so this heading is about 40px from top, showing the form fields below
+        window.scrollBy(0, rect.top - 40);
+        return 'found: ' + headings[i].textContent;
       }
     }
     return 'not found';
@@ -126,34 +117,30 @@ function removeFloatingElements(pg) {
   await dismissPopup(pg);
   await removeFloatingElements(pg);
   await pg.evaluate(() => {
-    var headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    // "Velux — the gold standard" H2 at ~1076, image above at ~802
+    // Scroll so image top is at top of viewport with small padding
+    var headings = document.querySelectorAll('h2');
     for (var i = 0; i < headings.length; i++) {
       var t = headings[i].textContent.toLowerCase();
       if (t.includes('velux') && t.includes('gold standard')) {
-        // Find the image above this heading
-        var prev = headings[i].previousElementSibling;
-        var parent = headings[i].parentElement;
-        var targetEl = headings[i];
-        // Walk up/back to find an image
-        if (prev && prev.tagName === 'IMG') targetEl = prev;
-        else if (parent) {
-          var imgs = parent.querySelectorAll('img');
-          if (imgs.length > 0) {
-            for (var j = imgs.length - 1; j >= 0; j--) {
-              if (imgs[j].getBoundingClientRect().top < headings[i].getBoundingClientRect().top) {
-                targetEl = imgs[j];
-                break;
-              }
-            }
-          }
-          // Also check previous sibling of parent
-          if (targetEl === headings[i] && parent.previousElementSibling) {
-            var prevImgs = parent.previousElementSibling.querySelectorAll('img');
-            if (prevImgs.length > 0) targetEl = prevImgs[0];
+        // Find the image/section just above this heading
+        var section = headings[i].closest('section, div');
+        var allImgs = document.querySelectorAll('img');
+        var bestImg = null;
+        var headingTop = headings[i].getBoundingClientRect().top + window.scrollY;
+        for (var j = 0; j < allImgs.length; j++) {
+          var imgTop = allImgs[j].getBoundingClientRect().top + window.scrollY;
+          if (imgTop < headingTop && imgTop > headingTop - 400) {
+            bestImg = allImgs[j];
           }
         }
-        var rect = targetEl.getBoundingClientRect();
-        window.scrollBy(0, rect.top - 10);
+        if (bestImg) {
+          var imgRect = bestImg.getBoundingClientRect();
+          window.scrollBy(0, imgRect.top - 40);
+        } else {
+          var rect = headings[i].getBoundingClientRect();
+          window.scrollBy(0, rect.top - 60);
+        }
         return 'found: ' + headings[i].textContent.substring(0, 50);
       }
     }
