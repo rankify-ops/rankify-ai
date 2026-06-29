@@ -59,11 +59,11 @@ function removeFloatingElements(pg) {
     for (var i = 0; i < dividers.length; i++) {
       if (dividers[i].textContent.trim().toLowerCase() === 'our process') {
         var rect = dividers[i].getBoundingClientRect();
-        window.scrollBy(0, rect.top - 40);
+        window.scrollBy(0, rect.top + 20);
         return;
       }
     }
-    window.scrollTo(0, 6440);
+    window.scrollTo(0, 6500);
   });
   await new Promise(r => setTimeout(r, 1500));
   await pg.screenshot({ path: 'images/tmp.png', fullPage: false });
@@ -88,7 +88,7 @@ function removeFloatingElements(pg) {
       var t = headings[i].textContent.toLowerCase();
       if (t.includes('60-second') || t.includes('60 second')) {
         var rect = headings[i].getBoundingClientRect();
-        window.scrollBy(0, rect.top - 80);
+        window.scrollBy(0, rect.top - 20);
         return 'found: ' + headings[i].textContent;
       }
     }
@@ -129,7 +129,7 @@ function removeFloatingElements(pg) {
         }
         if (bestImg) {
           var imgRect = bestImg.getBoundingClientRect();
-          window.scrollBy(0, imgRect.top - 40);
+          window.scrollBy(0, imgRect.top + 20);
         } else {
           var rect = headings[i].getBoundingClientRect();
           window.scrollBy(0, rect.top - 60);
