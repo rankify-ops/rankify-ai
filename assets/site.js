@@ -259,6 +259,12 @@
       {label:'Hire Rates', img:'images/hawker-rates.webp'},
       {label:'Studio Hire', img:'images/hawker-studio.webp'}
     ],
+    3: [
+      {label:'Home', img:'images/tintek-home.webp'},
+      {label:'Our Process', img:'images/tintek-process.webp'},
+      {label:'Quote Form', img:'images/tintek-quote.webp'},
+      {label:'Velux Skylights', img:'images/tintek-velux.webp'}
+    ],
     4: [
       {label:'Home', img:'images/myoko-home.webp'},
       {label:'Product Page', img:'images/myoko-product.webp'},
