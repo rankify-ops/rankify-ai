@@ -395,22 +395,18 @@
     });
   }
 
-  // Touch swipe for main gallery carousel on mobile
+  // Pause gallery animation on touch/hover
   if(track){
-    var touchStartX = 0, trackStartScroll = 0, isDragging = false;
-    track.addEventListener('touchstart', function(ev){
-      touchStartX = ev.touches[0].clientX;
-      trackStartScroll = track.parentElement.scrollLeft || 0;
-      isDragging = true;
+    track.addEventListener('touchstart', function(){
       track.style.animationPlayState = 'paused';
     }, {passive:true});
-    track.addEventListener('touchmove', function(ev){
-      if(!isDragging) return;
-      var diff = touchStartX - ev.touches[0].clientX;
-      track.parentElement.scrollLeft = trackStartScroll + diff;
-    }, {passive:true});
     track.addEventListener('touchend', function(){
-      isDragging = false;
+      setTimeout(function(){ track.style.animationPlayState = 'running'; }, 2000);
+    });
+    track.addEventListener('mouseenter', function(){
+      track.style.animationPlayState = 'paused';
+    });
+    track.addEventListener('mouseleave', function(){
       track.style.animationPlayState = 'running';
     });
   }
