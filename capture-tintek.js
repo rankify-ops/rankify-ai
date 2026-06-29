@@ -16,15 +16,8 @@ function removeFloatingElements(pg) {
     document.querySelectorAll('*').forEach(el => {
       var style = window.getComputedStyle(el);
       var pos = style.position;
-      if ((pos === 'fixed' || pos === 'sticky') && el.offsetHeight < 120 && el.offsetWidth < 200) {
-        var t = (el.textContent || '').toLowerCase();
-        var cls = (el.className || '').toString().toLowerCase();
-        var html = (el.innerHTML || '').toLowerCase();
-        if (t.includes('google') || t.includes('top rated') || t.includes('shop quality') ||
-            cls.includes('google') || cls.includes('badge') || cls.includes('trust') ||
-            html.includes('google') || html.includes('badge') || html.includes('shopquality')) {
-          el.style.display = 'none';
-        }
+      if (pos === 'fixed' || pos === 'sticky') {
+        el.style.display = 'none';
       }
     });
     document.querySelectorAll('iframe').forEach(el => {
@@ -88,14 +81,14 @@ function removeFloatingElements(pg) {
   await dismissPopup(pg);
   await removeFloatingElements(pg);
   await pg.evaluate(() => {
-    // Find "Quick 60-Second Quote" H3 at ~11299 and center the form below it
+    // Scroll to "Request a free quote below" / "Quick 60-Second Quote" form block
+    // Show heading + form options fully in view with spacing
     var headings = document.querySelectorAll('h3');
     for (var i = 0; i < headings.length; i++) {
       var t = headings[i].textContent.toLowerCase();
       if (t.includes('60-second') || t.includes('60 second')) {
         var rect = headings[i].getBoundingClientRect();
-        // Scroll so this heading is about 40px from top, showing the form fields below
-        window.scrollBy(0, rect.top - 40);
+        window.scrollBy(0, rect.top - 80);
         return 'found: ' + headings[i].textContent;
       }
     }
