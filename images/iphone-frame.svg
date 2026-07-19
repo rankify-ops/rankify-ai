@@ -24,6 +24,4 @@
   <circle cx="217" cy="38" r="4" fill="#080810"/>
   <!-- Lens reflection -->
   <circle cx="215.5" cy="36.5" r="1.5" fill="rgba(255,255,255,0.1)"/>
-  <!-- Subtle top highlight on bezel -->
-  <rect x="60" y="2" width="270" height="1" rx="0.5" fill="rgba(255,255,255,0.06)"/>
 </svg>

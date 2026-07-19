@@ -178,9 +178,8 @@ img{max-width:100%;display:block}
 .gt-frame.gt-mobile{position:relative;aspect-ratio:390/844}
 .gt-frame.gt-mobile .gt-frame-img{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
 .gt-notch{display:none}
-.gt-viewport{position:absolute;top:1.42%;left:3.08%;width:93.85%;height:97.16%;border-radius:clamp(12px,2vw,46px);overflow:hidden}
-.gt-viewport::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
-  background:linear-gradient(160deg,rgba(255,255,255,.04) 0%,transparent 30%,transparent 100%);border-radius:inherit}
+.gt-viewport{position:absolute;top:1.3%;left:2.8%;width:94.4%;height:97.4%;border-radius:clamp(10px,1.8vw,44px);overflow:hidden}
+.gt-viewport::after{display:none}
 .gt-home-bar{display:none}
 .gt-scroll-img{width:100%;height:100%;position:absolute;top:0;left:0;background-size:cover;background-position:top center}
 
