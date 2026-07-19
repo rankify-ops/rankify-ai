@@ -1,5 +1,16 @@
 // Rankify.ai shared JS
 (function(){
+  // Inject iPhone frame overlay into all phone mockups
+  document.querySelectorAll('.gt-frame.gt-mobile').forEach(function(f){
+    if(!f.querySelector('.gt-frame-img')){
+      var img=document.createElement('img');
+      img.className='gt-frame-img';
+      img.src='images/iphone-frame.svg';
+      img.alt='';
+      img.setAttribute('loading','lazy');
+      f.appendChild(img);
+    }
+  });
   var nav = document.getElementById('nav');
   var floatD = document.querySelector('.float-cta');
   var floatM = document.querySelector('.float-mob');
@@ -291,7 +302,7 @@
       div.className = 'dd-phone';
       div.dataset.label = p.label;
       div.dataset.img = p.img;
-      div.innerHTML = '<div class="gt-frame gt-mobile"><div class="gt-viewport"><div class="gt-scroll-img" style="background:url(\'' + p.img + '\') top center/cover"></div></div><div class="gt-home-bar"></div></div>';
+      div.innerHTML = '<div class="gt-frame gt-mobile"><div class="gt-viewport"><div class="gt-scroll-img" style="background:url(\'' + p.img + '\') top center/cover"></div></div><img class="gt-frame-img" src="images/iphone-frame.svg" alt="" loading="lazy"></div>';
       ddCarousel.appendChild(div);
     });
     // Rebind lightbox clicks
@@ -332,7 +343,7 @@
     phones.forEach(function(p, i){
       var slide = document.createElement('div');
       slide.className = 'lb-slide';
-      slide.innerHTML = '<div class="gt-frame gt-mobile"><div class="gt-viewport"><div class="gt-scroll-img" style="background:url(\'' + p.dataset.img + '\') top center/cover"></div></div><div class="gt-home-bar"></div></div>';
+      slide.innerHTML = '<div class="gt-frame gt-mobile"><div class="gt-viewport"><div class="gt-scroll-img" style="background:url(\'' + p.dataset.img + '\') top center/cover"></div></div><img class="gt-frame-img" src="images/iphone-frame.svg" alt="" loading="lazy"></div>';
       lbTrack.appendChild(slide);
       lbPhones.push({ label: p.dataset.label, el: slide });
       if(isMobile){

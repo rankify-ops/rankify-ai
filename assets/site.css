@@ -123,9 +123,7 @@ img{max-width:100%;display:block}
 @keyframes heroColUp{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
 @keyframes heroColDown{0%{transform:translateY(-50%)}100%{transform:translateY(0)}}
 .hero-col-phone{flex-shrink:0}
-.hero-col-phone .gt-frame.gt-mobile{border-radius:clamp(18px,2.2vw,30px);padding:clamp(6px,.8vw,10px) clamp(4px,.6vw,8px)}
-.hero-col-phone .gt-frame.gt-mobile::before{width:clamp(40px,7vw,65px);height:clamp(12px,1.5vw,18px);top:clamp(9px,1.2vw,14px)}
-.hero-col-phone .gt-frame.gt-mobile::after{width:clamp(5px,.7vw,8px);height:clamp(5px,.7vw,8px);top:clamp(12px,1.5vw,18px)}
+.hero-col-phone .gt-frame.gt-mobile{}
 .hero-trust-row{padding:24px 0;position:relative;z-index:1}
 .hero-link{color:var(--brand);text-decoration:underline;font-weight:600;transition:color .2s}
 .hero-link:hover{color:var(--brand-dark)}
@@ -176,17 +174,14 @@ img{max-width:100%;display:block}
 .gallery-tile.hiding{opacity:0;transform:scale(.95);pointer-events:none}
 .gallery-tile.hidden{display:none}
 
-/* Phone frame — iPhone 15 style */
-.gt-frame.gt-mobile{background:linear-gradient(160deg,#1c1c1e 0%,#0a0a0a 100%);border-radius:clamp(24px,3vw,40px);padding:clamp(8px,1.2vw,14px) clamp(6px,.9vw,11px);position:relative;
-  box-shadow:0 8px 30px rgba(0,0,0,.18),0 2px 8px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.1),inset 0 -1px 0 rgba(0,0,0,.4);
-  border:1px solid rgba(255,255,255,.08)}
-.gt-frame.gt-mobile::before{content:'';position:absolute;top:clamp(12px,1.6vw,20px);left:50%;transform:translateX(-50%);width:clamp(60px,10vw,90px);height:clamp(16px,2vw,24px);background:#0a0a0a;border-radius:50px;z-index:5;box-shadow:inset 0 1px 3px rgba(0,0,0,.5)}
-.gt-frame.gt-mobile::after{content:'';position:absolute;top:clamp(17px,2vw,26px);right:clamp(22%,24%,26%);width:clamp(6px,1vw,10px);height:clamp(6px,1vw,10px);background:radial-gradient(circle,#1a1a2e 30%,#0a0a0a 70%);border-radius:50%;z-index:6;box-shadow:inset 0 0 2px rgba(255,255,255,.08)}
+/* Phone frame — real iPhone overlay */
+.gt-frame.gt-mobile{position:relative;aspect-ratio:390/844}
+.gt-frame.gt-mobile .gt-frame-img{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
 .gt-notch{display:none}
-.gt-viewport{border-radius:clamp(16px,2.2vw,28px);overflow:hidden;position:relative;aspect-ratio:9/19.5}
+.gt-viewport{position:absolute;top:1.42%;left:3.08%;width:93.85%;height:97.16%;border-radius:clamp(12px,2vw,46px);overflow:hidden}
 .gt-viewport::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
-  background:linear-gradient(160deg,rgba(255,255,255,.06) 0%,transparent 30%,transparent 100%);border-radius:clamp(16px,2.2vw,28px)}
-.gt-home-bar{width:clamp(50px,8vw,90px);height:clamp(3px,.4vw,5px);background:rgba(255,255,255,.3);border-radius:3px;margin:clamp(6px,1vw,12px) auto clamp(2px,.3vw,4px)}
+  background:linear-gradient(160deg,rgba(255,255,255,.04) 0%,transparent 30%,transparent 100%);border-radius:inherit}
+.gt-home-bar{display:none}
 .gt-scroll-img{width:100%;height:100%;position:absolute;top:0;left:0;background-size:cover;background-position:top center}
 
 /* Browser frame */
@@ -522,7 +517,7 @@ img{max-width:100%;display:block}
 .dd-carousel{display:flex;gap:20px;padding:0 12px;justify-content:center}
 .dd-phone{scroll-snap-align:center;flex:0 0 clamp(140px,18vw,210px);text-align:center;transition:transform .3s;cursor:pointer}
 .dd-phone:hover{transform:translateY(-4px)}
-.dd-phone .gt-frame.gt-mobile{border-radius:clamp(16px,2vw,28px);padding:clamp(4px,.6vw,8px) clamp(3px,.5vw,7px)}
+.dd-phone .gt-frame.gt-mobile{}
 .dd-phone .gt-viewport{aspect-ratio:9/19.5;border-radius:clamp(12px,1.6vw,20px)}
 .dd-phone .gt-home-bar{width:clamp(30px,5vw,60px);height:clamp(2px,.3vw,3px);margin:clamp(3px,.5vw,6px) auto 1px}
 .dd-phone::after{content:attr(data-label);display:block;font-size:clamp(.65rem,.85vw,.75rem);font-weight:600;color:var(--g500);margin-top:8px;letter-spacing:.3px}
@@ -532,7 +527,7 @@ img{max-width:100%;display:block}
   .dd-carousel-wrap{overflow:visible;padding:0}
   .dd-carousel{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0;width:auto}
   .dd-phone{flex:none}
-  .dd-phone .gt-frame.gt-mobile{border-radius:20px;padding:5px 4px}
+  .dd-phone .gt-frame.gt-mobile{}
   .dd-phone .gt-viewport{border-radius:16px}
   .dd-phone .gt-home-bar{width:40px;height:2px;margin:4px auto 1px}
 }
@@ -568,9 +563,7 @@ img{max-width:100%;display:block}
 .cs-card{display:grid;grid-template-columns:auto 1fr;gap:0;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--r);overflow:hidden;backdrop-filter:blur(14px) saturate(1.5);-webkit-backdrop-filter:blur(14px) saturate(1.5);box-shadow:var(--neu-shadow);transition:all .3s;cursor:pointer}
 .cs-card:hover{box-shadow:var(--neu-shadow-hover);transform:translateY(-4px)}
 .cs-card-img{width:160px;background:var(--g100);display:flex;align-items:center;justify-content:center;padding:16px 12px}
-.cs-card-img .gt-frame.gt-mobile{border-radius:16px;padding:5px 4px}
-.cs-card-img .gt-frame.gt-mobile::before{width:36px;height:10px;top:8px}
-.cs-card-img .gt-frame.gt-mobile::after{width:4px;height:4px;top:11px;right:28%}
+.cs-card-img .gt-frame.gt-mobile{}
 .cs-card-img .gt-viewport{aspect-ratio:9/19.5;border-radius:12px}
 .cs-card-img .gt-home-bar{width:30px;height:2px;margin:3px auto 1px}
 .cs-card-body{padding:28px 24px;display:flex;flex-direction:column;justify-content:center}
@@ -747,7 +740,7 @@ img{max-width:100%;display:block}
   .hero-stat .hs-val{font-size:1.1rem}
   .hero-split{gap:20px}
   .hero-cols{height:360px;gap:10px}
-  .hero-col-phone .gt-frame.gt-mobile{border-radius:14px;padding:3px}
+  .hero-col-phone .gt-frame.gt-mobile{}
   .hiw-grid{grid-template-columns:1fr}
   .rev-card{min-width:280px;max-width:280px}
   .qform{padding:28px 20px}

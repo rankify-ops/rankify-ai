@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" fill="none">
+  <defs>
+    <mask id="screenCut">
+      <rect width="390" height="844" fill="white"/>
+      <rect x="12" y="12" width="366" height="820" rx="46" ry="46" fill="black"/>
+    </mask>
+  </defs>
+  <!-- Outer body with screen cutout -->
+  <rect x="1" y="1" width="388" height="842" rx="56" ry="56" fill="#1c1c1e" stroke="#444" stroke-width="1" mask="url(#screenCut)"/>
+  <!-- Inner bezel ring (visible around screen edge) -->
+  <rect x="10" y="10" width="370" height="824" rx="48" ry="48" fill="none" stroke="#111" stroke-width="2"/>
+  <!-- Side buttons — left (mute toggle) -->
+  <rect x="-1" y="164" width="3" height="30" rx="1.5" fill="#2a2a2a"/>
+  <!-- Side buttons — left (volume up) -->
+  <rect x="-1" y="222" width="3" height="58" rx="1.5" fill="#2a2a2a"/>
+  <!-- Side buttons — left (volume down) -->
+  <rect x="-1" y="296" width="3" height="58" rx="1.5" fill="#2a2a2a"/>
+  <!-- Side button — right (power) -->
+  <rect x="388" y="244" width="3" height="76" rx="1.5" fill="#2a2a2a"/>
+  <!-- Dynamic Island -->
+  <rect x="139" y="21.5" width="112" height="33" rx="16.5" fill="#0a0a0a"/>
+  <!-- Camera lens housing -->
+  <circle cx="217" cy="38" r="6.5" fill="#0f0f14"/>
+  <circle cx="217" cy="38" r="4" fill="#080810"/>
+  <!-- Lens reflection -->
+  <circle cx="215.5" cy="36.5" r="1.5" fill="rgba(255,255,255,0.1)"/>
+  <!-- Subtle top highlight on bezel -->
+  <rect x="60" y="2" width="270" height="1" rx="0.5" fill="rgba(255,255,255,0.06)"/>
+</svg>
