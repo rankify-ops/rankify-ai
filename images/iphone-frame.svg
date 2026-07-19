@@ -17,11 +17,4 @@
   <rect x="-1" y="296" width="3" height="58" rx="1.5" fill="#2a2a2a"/>
   <!-- Side button — right (power) -->
   <rect x="388" y="244" width="3" height="76" rx="1.5" fill="#2a2a2a"/>
-  <!-- Dynamic Island -->
-  <rect x="139" y="21.5" width="112" height="33" rx="16.5" fill="#0a0a0a"/>
-  <!-- Camera lens housing -->
-  <circle cx="217" cy="38" r="6.5" fill="#0f0f14"/>
-  <circle cx="217" cy="38" r="4" fill="#080810"/>
-  <!-- Lens reflection -->
-  <circle cx="215.5" cy="36.5" r="1.5" fill="rgba(255,255,255,0.1)"/>
 </svg>
