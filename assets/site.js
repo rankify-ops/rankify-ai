@@ -395,6 +395,14 @@
     });
   }
 
+  // Case study card click handlers
+  document.querySelectorAll('.cs-card').forEach(function(card){
+    card.addEventListener('click', function(){
+      var idx = parseInt(card.dataset.idx);
+      if(deepDivePages[idx]) openDeepDive(idx); else openCaseStudy(idx);
+    });
+  });
+
   // Pause gallery animation on touch/hover
   if(track){
     track.addEventListener('touchstart', function(){
