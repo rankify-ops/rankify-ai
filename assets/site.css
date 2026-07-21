@@ -427,6 +427,9 @@ img{max-width:100%;display:block}
 .ben-card p{font-size:.86rem;color:var(--g500);line-height:1.6}
 
 /* ================ AGENCY REFRAME — COMPARISON TABLE ================ */
+.one-dev-copy{max-width:720px;margin:0 auto;font-size:clamp(1rem,1.2vw,1.15rem);line-height:1.7;color:var(--g500)}
+.one-dev-copy p{margin-bottom:1em}
+.one-dev-copy p:last-child{margin-bottom:0}
 .reframe-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,4vw,80px);align-items:start;align-content:start}
 .reframe-copy{order:2}
 .cmp-wrap{order:1}
