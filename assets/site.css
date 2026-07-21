@@ -122,8 +122,7 @@ img{max-width:100%;display:block}
 .hero-col-down .hero-col-track{animation:heroColDown 20s linear infinite}
 @keyframes heroColUp{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
 @keyframes heroColDown{0%{transform:translateY(-50%)}100%{transform:translateY(0)}}
-.hero-col-phone{flex-shrink:0}
-.hero-col-phone .gt-frame.gt-mobile{}
+.hero-col-phone{flex-shrink:0;max-width:160px;margin:0 auto}
 .hero-trust-row{padding:24px 0;position:relative;z-index:1}
 .hero-link{color:var(--brand);text-decoration:underline;font-weight:600;transition:color .2s}
 .hero-link:hover{color:var(--brand-dark)}
@@ -700,7 +699,9 @@ img{max-width:100%;display:block}
   .hero-sub-main{margin-left:auto;margin-right:auto}
   .hero-checks{justify-content:center}
   .hero-btns{justify-content:center}
-  .hero-cols{height:420px;max-width:500px;margin:32px auto 0}
+  .hero .hero-cols{display:none}
+  #reframe .hero-cols{display:grid;height:360px;max-width:100%;margin:32px 0 0;gap:10px}
+  #reframe .hero-col-phone{max-width:120px}
   .hiw-grid{grid-template-columns:1fr 1fr}
   .partner-card{grid-template-columns:1fr;padding:36px}
   .price-grid{grid-template-columns:1fr}
@@ -741,8 +742,9 @@ img{max-width:100%;display:block}
   .hero-stat{padding:14px 16px}
   .hero-stat .hs-val{font-size:1.1rem}
   .hero-split{gap:20px}
-  .hero-cols{height:360px;gap:10px}
-  .hero-col-phone .gt-frame.gt-mobile{}
+  .hero .hero-cols{display:none}
+  #reframe .hero-cols{height:300px;gap:8px}
+  #reframe .hero-col-phone{max-width:100px}
   .hiw-grid{grid-template-columns:1fr}
   .rev-card{min-width:280px;max-width:280px}
   .qform{padding:28px 20px}

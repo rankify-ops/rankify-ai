@@ -11,6 +11,15 @@
       f.appendChild(img);
     }
   });
+  // On mobile, move hero columns into the reframe section
+  if(window.innerWidth<=1024){
+    var heroCols=document.querySelector('.hero-cols');
+    var reframeSec=document.getElementById('reframe');
+    if(heroCols&&reframeSec){
+      reframeSec.querySelector('.ctr').appendChild(heroCols);
+      heroCols.style.display='';
+    }
+  }
   var nav = document.getElementById('nav');
   var floatD = document.querySelector('.float-cta');
   var floatM = document.querySelector('.float-mob');
