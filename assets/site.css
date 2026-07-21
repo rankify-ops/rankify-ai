@@ -97,7 +97,7 @@ img{max-width:100%;display:block}
   radial-gradient(ellipse 60% 50% at 20% 80%,rgba(124,58,237,.05),transparent 60%),
   radial-gradient(ellipse 40% 40% at 90% 70%,rgba(7,168,137,.04),transparent 50%);pointer-events:none}
 .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to bottom,transparent,#f0f2f5);pointer-events:none}
-.hero .ctr{max-width:1400px}
+.hero .ctr{max-width:var(--ctr-max)}
 .hero-split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,4vw,80px);align-items:center}
 .hero-copy{position:relative;z-index:1}
 .hero-proof-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.7);border-radius:50px;font-size:.82rem;font-weight:600;color:var(--g600);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 8px rgba(0,0,0,.03),inset 0 1px 0 rgba(255,255,255,.7);margin-bottom:24px}
