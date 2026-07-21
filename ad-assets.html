@@ -8,31 +8,27 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'DM Sans',-apple-system,sans-serif;background:#f0f2f5;color:#111;overflow-x:hidden}
 
-/* ── PHONE FRAME ── */
 .phone{position:relative;aspect-ratio:390/844;border-radius:14.4%/6.6%;overflow:hidden;flex-shrink:0;background:#1c1c1e;box-shadow:0 8px 30px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.06)}
 .phone-screen{position:absolute;inset:3.1% 3.1% 2.8%;border-radius:12.6%/5.6%;overflow:hidden;background:#000}
 .phone-screen img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
 .phone-bar{position:absolute;bottom:2.4%;left:50%;transform:translateX(-50%);width:36%;height:0.6%;background:rgba(255,255,255,.3);border-radius:99px}
 .phone::after{content:'';position:absolute;inset:0;border-radius:14.4%/6.6%;border:2px solid rgba(0,0,0,.08);pointer-events:none}
 
-/* ── SECTION LABELS ── */
 .asset-section{padding:80px 0;position:relative}
 .asset-section+.asset-section{border-top:1px solid rgba(0,0,0,.06)}
 .section-label{text-align:center;font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:rgba(0,0,0,.2);margin-bottom:48px;font-weight:600}
 
-/* ── HORIZONTAL ROWS ── */
-.h-scroll-wrap{overflow:hidden;padding:10px 0;position:relative}
+/* horizontal */
+.h-scroll-wrap{overflow:hidden;padding:10px 0}
 .h-scroll-wrap+.h-scroll-wrap{margin-top:24px}
 .h-track{display:flex;gap:24px;width:max-content}
 .h-track .phone{width:180px}
-
 .h-track.scroll-left{animation:scrollLeft 45s linear infinite}
 .h-track.scroll-right{animation:scrollRight 45s linear infinite}
-
 @keyframes scrollLeft{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes scrollRight{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
 
-/* ── VERTICAL COLUMNS ── */
+/* vertical */
 .v-wrap{display:flex;justify-content:center;gap:24px;height:900px;overflow:hidden;mask-image:linear-gradient(to bottom,transparent 0%,#000 6%,#000 94%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 6%,#000 94%,transparent 100%)}
 .v-col{overflow:hidden;width:200px;position:relative}
 .v-track{display:flex;flex-direction:column;gap:24px}
@@ -45,7 +41,6 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:#f0f2f5;color:#11
 @keyframes vUp{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
 @keyframes vDown{0%{transform:translateY(-50%)}100%{transform:translateY(0)}}
 
-/* Speed variants */
 .v-wrap.speed-b .v-col-up .v-track{animation-duration:32s}
 .v-wrap.speed-b .v-col-down .v-track{animation-duration:24s}
 .v-wrap.speed-b .v-col-up-offset .v-track{animation-duration:32s;animation-delay:-14s}
@@ -53,6 +48,10 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:#f0f2f5;color:#11
 .v-wrap.speed-c .v-col-up .v-track{animation-duration:24s}
 .v-wrap.speed-c .v-col-down .v-track{animation-duration:30s}
 .v-wrap.speed-c .v-col-up-offset .v-track{animation-duration:24s;animation-delay:-7s}
+
+.v-wrap.speed-d .v-col-up .v-track{animation-duration:26s}
+.v-wrap.speed-d .v-col-down .v-track{animation-duration:32s}
+.v-wrap.speed-d .v-col-up-offset .v-track{animation-duration:26s;animation-delay:-12s}
 </style>
 </head>
 <body>
@@ -61,110 +60,102 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:#f0f2f5;color:#11
 <!-- ASSET 1 — HORIZONTAL 2-ROW SCROLL             -->
 <!-- ═══════════════════════════════════════════════ -->
 <section class="asset-section">
-  <div class="section-label">Asset 1 — Horizontal Scroll (2 rows, opposite directions)</div>
-
+  <div class="section-label">Asset 1 — Horizontal Scroll (2 rows)</div>
   <div class="h-scroll-wrap">
     <div class="h-track scroll-left">
       <div class="phone"><div class="phone-screen"><img src="images/hiatus-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hawker-home.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/myoko-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
-      <div class="phone"><div class="phone-screen"><img src="images/tintek-home.webp" alt=""></div><div class="phone-bar"></div></div>
+      <div class="phone"><div class="phone-screen"><img src="images/tintek-process.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hiatus-bracelets.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/enricher-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hawker-rates.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/myoko-product.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/geelong-hp-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hiatus-necklaces.webp" alt=""></div><div class="phone-bar"></div></div>
-      <div class="phone"><div class="phone-screen"><img src="images/tintek-process.webp" alt=""></div><div class="phone-bar"></div></div>
+      <div class="phone"><div class="phone-screen"><img src="images/tintek-velux.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/primegroup-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hiatus-about.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hawker-studio.webp" alt=""></div><div class="phone-bar"></div></div>
-      <!-- duplicate for loop -->
+      <!-- loop duplicate -->
       <div class="phone"><div class="phone-screen"><img src="images/hiatus-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hawker-home.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/myoko-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
-      <div class="phone"><div class="phone-screen"><img src="images/tintek-home.webp" alt=""></div><div class="phone-bar"></div></div>
+      <div class="phone"><div class="phone-screen"><img src="images/tintek-process.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hiatus-bracelets.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/enricher-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hawker-rates.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/myoko-product.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/geelong-hp-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hiatus-necklaces.webp" alt=""></div><div class="phone-bar"></div></div>
-      <div class="phone"><div class="phone-screen"><img src="images/tintek-process.webp" alt=""></div><div class="phone-bar"></div></div>
+      <div class="phone"><div class="phone-screen"><img src="images/tintek-velux.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/primegroup-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hiatus-about.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hawker-studio.webp" alt=""></div><div class="phone-bar"></div></div>
     </div>
   </div>
-
   <div class="h-scroll-wrap">
     <div class="h-track scroll-right">
-      <div class="phone"><div class="phone-screen"><img src="images/hiatus-home.webp" alt=""></div><div class="phone-bar"></div></div>
+      <div class="phone"><div class="phone-screen"><img src="images/hiatus-rings.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hawker-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/myoko-home.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/tintek-quote.webp" alt=""></div><div class="phone-bar"></div></div>
-      <div class="phone"><div class="phone-screen"><img src="images/hiatus-rings.webp" alt=""></div><div class="phone-bar"></div></div>
+      <div class="phone"><div class="phone-screen"><img src="images/hiatus-product.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hawker-book.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/myoko-about.webp" alt=""></div><div class="phone-bar"></div></div>
-      <div class="phone"><div class="phone-screen"><img src="images/tintek-velux.webp" alt=""></div><div class="phone-bar"></div></div>
-      <div class="phone"><div class="phone-screen"><img src="images/hiatus-product.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hiatus-scroll.webp" alt=""></div><div class="phone-bar"></div></div>
-      <div class="phone"><div class="phone-screen"><img src="images/myoko-reviews.webp" alt=""></div><div class="phone-bar"></div></div>
-      <div class="phone"><div class="phone-screen"><img src="images/tinktek-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hiatus-sizing.webp" alt=""></div><div class="phone-bar"></div></div>
-      <!-- duplicate for loop -->
+      <div class="phone"><div class="phone-screen"><img src="images/myoko-reviews.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hiatus-home.webp" alt=""></div><div class="phone-bar"></div></div>
+      <div class="phone"><div class="phone-screen"><img src="images/tintek-home.webp" alt=""></div><div class="phone-bar"></div></div>
+      <div class="phone"><div class="phone-screen"><img src="images/tinktek-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
+      <!-- loop duplicate -->
+      <div class="phone"><div class="phone-screen"><img src="images/hiatus-rings.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hawker-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/myoko-home.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/tintek-quote.webp" alt=""></div><div class="phone-bar"></div></div>
-      <div class="phone"><div class="phone-screen"><img src="images/hiatus-rings.webp" alt=""></div><div class="phone-bar"></div></div>
+      <div class="phone"><div class="phone-screen"><img src="images/hiatus-product.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hawker-book.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/myoko-about.webp" alt=""></div><div class="phone-bar"></div></div>
-      <div class="phone"><div class="phone-screen"><img src="images/tintek-velux.webp" alt=""></div><div class="phone-bar"></div></div>
-      <div class="phone"><div class="phone-screen"><img src="images/hiatus-product.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hiatus-scroll.webp" alt=""></div><div class="phone-bar"></div></div>
-      <div class="phone"><div class="phone-screen"><img src="images/myoko-reviews.webp" alt=""></div><div class="phone-bar"></div></div>
-      <div class="phone"><div class="phone-screen"><img src="images/tinktek-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
       <div class="phone"><div class="phone-screen"><img src="images/hiatus-sizing.webp" alt=""></div><div class="phone-bar"></div></div>
+      <div class="phone"><div class="phone-screen"><img src="images/myoko-reviews.webp" alt=""></div><div class="phone-bar"></div></div>
+      <div class="phone"><div class="phone-screen"><img src="images/hiatus-home.webp" alt=""></div><div class="phone-bar"></div></div>
+      <div class="phone"><div class="phone-screen"><img src="images/tintek-home.webp" alt=""></div><div class="phone-bar"></div></div>
+      <div class="phone"><div class="phone-screen"><img src="images/tinktek-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════ -->
-<!-- ASSET 2 — VERTICAL 3-COL (All projects mixed)  -->
+<!-- ASSET 2 — VERTICAL 3-COL (uses hiatus-mobile, NOT hiatus-home; uses tintek-quote, NOT tintek-home/tinktek-mobile) -->
 <!-- ═══════════════════════════════════════════════ -->
 <section class="asset-section">
-  <div class="section-label">Asset 2 — Vertical 3-Column (mixed projects)</div>
-
+  <div class="section-label">Asset 2 — Vertical 3-Column (mixed A)</div>
   <div class="v-wrap">
-    <!-- Col 1 — UP -->
     <div class="v-col v-col-up">
       <div class="v-track">
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-product.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/tintek-home.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/tintek-quote.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-bracelets.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/enricher-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-rates.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-about.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-sizing.webp" alt=""></div><div class="phone-bar"></div></div>
         <!-- duplicate -->
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-product.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/tintek-home.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/tintek-quote.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-bracelets.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/enricher-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-rates.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-about.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-sizing.webp" alt=""></div><div class="phone-bar"></div></div>
       </div>
     </div>
-    <!-- Col 2 — DOWN -->
     <div class="v-col v-col-down">
       <div class="v-track">
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tintek-process.webp" alt=""></div><div class="phone-bar"></div></div>
@@ -174,7 +165,6 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:#f0f2f5;color:#11
         <div class="phone"><div class="phone-screen"><img src="images/myoko-reviews.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-scroll.webp" alt=""></div><div class="phone-bar"></div></div>
         <!-- duplicate -->
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tintek-process.webp" alt=""></div><div class="phone-bar"></div></div>
@@ -185,177 +175,157 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:#f0f2f5;color:#11
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-scroll.webp" alt=""></div><div class="phone-bar"></div></div>
       </div>
     </div>
-    <!-- Col 3 — UP (OFFSET so not aligned with col 1) -->
     <div class="v-col v-col-up-offset">
       <div class="v-track">
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-about.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-studio.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-home.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/tintek-quote.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/tintek-velux.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-rings.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/primegroup-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/tinktek-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/tintek-velux.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-product.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hiatus-sizing.webp" alt=""></div><div class="phone-bar"></div></div>
         <!-- duplicate -->
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-about.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-studio.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-home.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/tintek-quote.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/tintek-velux.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-rings.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/primegroup-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/tinktek-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/tintek-velux.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-product.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hiatus-sizing.webp" alt=""></div><div class="phone-bar"></div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════ -->
-<!-- ASSET 3 — VERTICAL 3-COL (Hiatus-heavy)        -->
+<!-- ASSET 3 — VERTICAL 3-COL (uses hiatus-home, NOT hiatus-mobile; uses tintek-home, NOT tinktek-mobile) -->
 <!-- ═══════════════════════════════════════════════ -->
 <section class="asset-section">
-  <div class="section-label">Asset 3 — Vertical 3-Column (Hiatus focus)</div>
-
+  <div class="section-label">Asset 3 — Vertical 3-Column (mixed B)</div>
   <div class="v-wrap speed-b">
-    <!-- Col 1 — UP -->
     <div class="v-col v-col-up">
       <div class="v-track">
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-bracelets.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-about.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hawker-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hiatus-home.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hawker-book.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tintek-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-scroll.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/geelong-hp-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hawker-studio.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-product.webp" alt=""></div><div class="phone-bar"></div></div>
         <!-- duplicate -->
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-bracelets.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-about.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hawker-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hiatus-home.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hawker-book.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tintek-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-scroll.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/geelong-hp-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hawker-studio.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-product.webp" alt=""></div><div class="phone-bar"></div></div>
       </div>
     </div>
-    <!-- Col 2 — DOWN -->
     <div class="v-col v-col-down">
       <div class="v-track">
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-necklaces.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-rings.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tintek-process.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-sizing.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/enricher-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/primegroup-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hiatus-rings.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/myoko-about.webp" alt=""></div><div class="phone-bar"></div></div>
         <!-- duplicate -->
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-necklaces.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-rings.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tintek-process.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-sizing.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/enricher-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/primegroup-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hiatus-rings.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/myoko-about.webp" alt=""></div><div class="phone-bar"></div></div>
       </div>
     </div>
-    <!-- Col 3 — UP OFFSET -->
     <div class="v-col v-col-up-offset">
       <div class="v-track">
-        <div class="phone"><div class="phone-screen"><img src="images/hawker-book.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hawker-rates.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-product.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tintek-quote.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hawker-rates.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/myoko-about.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hiatus-bracelets.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hawker-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tintek-velux.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hawker-studio.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-reviews.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/tinktek-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hiatus-about.webp" alt=""></div><div class="phone-bar"></div></div>
         <!-- duplicate -->
-        <div class="phone"><div class="phone-screen"><img src="images/hawker-book.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hawker-rates.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-product.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tintek-quote.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hawker-rates.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/myoko-about.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hiatus-bracelets.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hawker-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tintek-velux.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hawker-studio.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-reviews.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/tinktek-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hiatus-about.webp" alt=""></div><div class="phone-bar"></div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════ -->
-<!-- ASSET 4 — VERTICAL 3-COL (eCommerce + Services) -->
+<!-- ASSET 4 — VERTICAL 3-COL (uses hiatus-mobile, tinktek-mobile — eCommerce heavy) -->
 <!-- ═══════════════════════════════════════════════ -->
 <section class="asset-section">
-  <div class="section-label">Asset 4 — Vertical 3-Column (eCommerce + Services)</div>
-
+  <div class="section-label">Asset 4 — Vertical 3-Column (eCommerce)</div>
   <div class="v-wrap speed-c">
-    <!-- Col 1 — UP -->
     <div class="v-col v-col-up">
       <div class="v-track">
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-home.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hiatus-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-home.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hawker-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/tintek-velux.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-product.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-reviews.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-studio.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/primegroup-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-necklaces.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/tintek-velux.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/primegroup-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <!-- duplicate -->
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-home.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hiatus-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-home.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hawker-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/tintek-velux.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-product.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-reviews.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-studio.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/primegroup-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-necklaces.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/tintek-velux.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/primegroup-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
       </div>
     </div>
-    <!-- Col 2 — DOWN -->
     <div class="v-col v-col-down">
       <div class="v-track">
-        <div class="phone"><div class="phone-screen"><img src="images/tintek-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-rings.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-product.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tintek-process.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-book.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-scroll.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/enricher-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hawker-rates.webp" alt=""></div><div class="phone-bar"></div></div>
         <!-- duplicate -->
-        <div class="phone"><div class="phone-screen"><img src="images/tintek-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-rings.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-product.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tintek-process.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-book.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-scroll.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/enricher-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hawker-rates.webp" alt=""></div><div class="phone-bar"></div></div>
       </div>
     </div>
-    <!-- Col 3 — UP OFFSET -->
     <div class="v-col v-col-up-offset">
       <div class="v-track">
         <div class="phone"><div class="phone-screen"><img src="images/geelong-hp-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-sizing.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-about.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hawker-rates.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tintek-quote.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-bracelets.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tinktek-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
@@ -365,7 +335,6 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:#f0f2f5;color:#11
         <div class="phone"><div class="phone-screen"><img src="images/geelong-hp-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-sizing.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-about.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hawker-rates.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tintek-quote.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-bracelets.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tinktek-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
@@ -377,37 +346,32 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:#f0f2f5;color:#11
 </section>
 
 <!-- ═══════════════════════════════════════════════ -->
-<!-- ASSET 5 — VERTICAL 3-COL (Hawker + Myoko focus) -->
+<!-- ASSET 5 — VERTICAL 3-COL (uses hiatus-home, tintek-home — Services heavy) -->
 <!-- ═══════════════════════════════════════════════ -->
 <section class="asset-section">
-  <div class="section-label">Asset 5 — Vertical 3-Column (Hawker + Myoko focus)</div>
-
-  <div class="v-wrap">
-    <!-- Col 1 — UP -->
+  <div class="section-label">Asset 5 — Vertical 3-Column (Services)</div>
+  <div class="v-wrap speed-d">
     <div class="v-col v-col-up">
       <div class="v-track">
         <div class="phone"><div class="phone-screen"><img src="images/hawker-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/myoko-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/tintek-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-book.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-product.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-rates.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-about.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/tintek-home.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hiatus-about.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/geelong-hp-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <!-- duplicate -->
         <div class="phone"><div class="phone-screen"><img src="images/hawker-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/myoko-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/tintek-home.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-book.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-product.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hawker-rates.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/myoko-about.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/tintek-home.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/hiatus-about.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/geelong-hp-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
       </div>
     </div>
-    <!-- Col 2 — DOWN -->
     <div class="v-col v-col-down">
       <div class="v-track">
         <div class="phone"><div class="phone-screen"><img src="images/hawker-home.webp" alt=""></div><div class="phone-bar"></div></div>
@@ -431,7 +395,6 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:#f0f2f5;color:#11
         <div class="phone"><div class="phone-screen"><img src="images/primegroup-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
       </div>
     </div>
-    <!-- Col 3 — UP OFFSET -->
     <div class="v-col v-col-up-offset">
       <div class="v-track">
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-rings.webp" alt=""></div><div class="phone-bar"></div></div>
@@ -439,20 +402,18 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:#f0f2f5;color:#11
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-necklaces.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tintek-velux.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-sizing.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/tinktek-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/myoko-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-scroll.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-product.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-about.webp" alt=""></div><div class="phone-bar"></div></div>
         <!-- duplicate -->
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-rings.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tintek-quote.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-necklaces.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/tintek-velux.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-sizing.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/tinktek-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
+        <div class="phone"><div class="phone-screen"><img src="images/myoko-mobile.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-scroll.webp" alt=""></div><div class="phone-bar"></div></div>
         <div class="phone"><div class="phone-screen"><img src="images/hiatus-product.webp" alt=""></div><div class="phone-bar"></div></div>
-        <div class="phone"><div class="phone-screen"><img src="images/hiatus-about.webp" alt=""></div><div class="phone-bar"></div></div>
       </div>
     </div>
   </div>
