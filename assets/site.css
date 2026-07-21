@@ -175,7 +175,7 @@ img{max-width:100%;display:block}
 .gallery-tile.hidden{display:none}
 
 /* Phone frame — real iPhone overlay */
-.gt-frame.gt-mobile{position:relative;aspect-ratio:390/844}
+.gt-frame.gt-mobile{position:relative;aspect-ratio:390/844;border-radius:14.4% / 6.6%;overflow:hidden}
 .gt-frame.gt-mobile .gt-frame-img{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
 .gt-notch{display:none}
 .gt-viewport{position:absolute;top:1.3%;left:3.1%;right:3.1%;bottom:1.4%;overflow:hidden;border-radius:12.6% / 5.6%}
