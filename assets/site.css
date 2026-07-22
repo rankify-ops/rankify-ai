@@ -91,7 +91,7 @@ img{max-width:100%;display:block}
 .btn-s svg{width:18px;height:18px}
 
 /* ================ HERO (split layout) ================ */
-.hero{padding:160px 0 60px;position:relative;background:linear-gradient(160deg,#f8fafb 0%,rgba(7,168,137,.05) 30%,#f4f6f8 55%,rgba(124,58,237,.03) 80%,#f0f2f5 100%);overflow:hidden}
+.hero{padding:clamp(100px,12vh,160px) 0 clamp(40px,5vh,60px);position:relative;background:linear-gradient(160deg,#f8fafb 0%,rgba(7,168,137,.05) 30%,#f4f6f8 55%,rgba(124,58,237,.03) 80%,#f0f2f5 100%);overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:
   radial-gradient(ellipse 80% 60% at 50% 20%,rgba(7,168,137,.07),transparent 70%),
   radial-gradient(ellipse 60% 50% at 20% 80%,rgba(124,58,237,.05),transparent 60%),
