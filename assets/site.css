@@ -386,17 +386,17 @@ img{max-width:100%;display:block}
 .footer-bottom{padding:24px 0;font-size:.78rem;color:rgba(255,255,255,.4)}
 
 /* ================ FLOATING CTA (glass) ================ */
-.float-cta{position:fixed;bottom:24px;right:24px;z-index:90;display:flex;flex-direction:column;gap:10px;opacity:0;visibility:hidden;transform:translateY(20px);transition:all .3s ease}
-.float-cta.show{opacity:1;visibility:visible;transform:translateY(0)}
-.float-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;position:relative;border:none;font-family:inherit}
-.float-btn svg{width:22px;height:22px;color:#fff}
-.float-phone{background:linear-gradient(135deg,var(--g800) 0%,var(--g900) 100%);box-shadow:0 6px 20px rgba(0,0,0,0.15),inset 0 1px 0 rgba(255,255,255,.08),inset 0 -1px 0 rgba(0,0,0,.1)}
-.float-phone:hover{transform:scale(1.08);box-shadow:0 8px 28px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,.1)}
-.float-phone-tip{position:absolute;right:62px;top:50%;transform:translateY(-50%);background:var(--g900);color:#fff;padding:8px 14px;border-radius:10px;font-size:.82rem;font-weight:700;white-space:nowrap;opacity:0;visibility:hidden;transition:all .2s;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,.15)}
-.float-phone:hover .float-phone-tip{opacity:1;visibility:visible}
-.float-quote{background:linear-gradient(135deg,var(--brand) 0%,#05c49e 100%);box-shadow:0 6px 20px rgba(7,168,137,.3),inset 0 1px 0 rgba(255,255,255,.2),inset 0 -1px 0 rgba(0,0,0,.05);animation:float-pulse 2s ease-in-out infinite}
-.float-quote:hover{background:linear-gradient(135deg,var(--brand-dark) 0%,var(--brand) 100%);animation:none;transform:scale(1.08);box-shadow:0 8px 28px rgba(7,168,137,.35),inset 0 1px 0 rgba(255,255,255,.25)}
-@keyframes float-pulse{0%,100%{box-shadow:0 4px 20px var(--brand-glow)}50%{box-shadow:0 4px 32px rgba(7,168,137,.35)}}
+.float-cta{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);z-index:90;display:flex;align-items:center;gap:16px;background:var(--g900);padding:14px 16px 14px 28px;border-radius:16px;opacity:0;visibility:hidden;transition:all .4s ease;box-shadow:0 12px 40px rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.1);max-width:720px;width:calc(100% - 48px)}
+.float-cta.show{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.float-cta-text{flex:1;display:flex;flex-direction:column;gap:2px}
+.float-cta-title{color:#fff;font-size:.9rem;font-weight:700}
+.float-cta-sub{color:rgba(255,255,255,.5);font-size:.78rem;font-weight:500}
+.float-cta-btn{display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--g900);padding:10px 22px;border-radius:10px;font-size:.84rem;font-weight:700;white-space:nowrap;transition:all .2s;cursor:pointer;text-decoration:none;border:none;font-family:inherit}
+.float-cta-btn:hover{background:var(--g100);transform:translateY(-1px)}
+.float-cta-btn svg{width:16px;height:16px}
+.float-cta-close{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.1);border:none;cursor:pointer;transition:all .2s;flex-shrink:0}
+.float-cta-close:hover{background:rgba(255,255,255,.2)}
+.float-cta-close svg{width:14px;height:14px;color:rgba(255,255,255,.5)}
 
 /* Mobile floating bar */
 .float-mob{display:none}
